@@ -30,8 +30,8 @@ sem depender das bibliotecas prontas da Arduino IDE.
 // [OK] Implementar toggle do laser usando timer (pisca 1 Hz)
 
 // ===== LDR E DANO =====
-// [ ] Ler o LDR continuamente
-// [ ] Criar detecção de "dano" (threshold)
+// [OK] Ler o LDR continuamente
+// [OK] Criar detecção de "dano" (threshold)
 // [ ] Ao tomar dano: parar carrinho
 // [ ] Girar o carrinho 180 graus
 // [ ] Aguardar 5 segundos antes de voltar ao normal
@@ -58,10 +58,7 @@ sem depender das bibliotecas prontas da Arduino IDE.
 
 // ===== ESTRUTURA GERAL =====
 // [ ] Criar máquina de estados (normal, tomouDano, morto)
-// [ ] Organizar o código em funções separadas
-// [ ] Testar cada módulo isoladamente (laser, LDR, motores, BT)
 // [ ] Teste final de integração geral
-
 // ------------------------------------------------------------
 
 //RESOLVER SITUACAO DO SOFTWARE SERIAL
@@ -89,14 +86,16 @@ sem depender das bibliotecas prontas da Arduino IDE.
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
+//Variaveis do bt
 volatile uint8_t bt_receiving = 0;
 volatile uint8_t bt_bitIndex = 0;
 volatile uint8_t bt_currentByte = 0;
 volatile uint8_t bt_hasByte = 0;
 volatile uint8_t bt_syncPhase = 0;
 
+//Variaveis de codigo
 #define MAX_LIFES 3;
-
+#define LDR_THRESHOLD 700;
 
 int CurLifes = MAX_LIFES;
 int LaserOn = 0;
@@ -281,6 +280,19 @@ void ResetLifes(){
 	CurLifes = MAX_LIFES;
 }
 
+void SetupAdc() {
+	ADMUX = (1 << REFS0);
+	ADCSRA = (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0);
+}
+
+uint16_t ReadLdr() {
+	ADMUX = (ADMUX & 0xF0) | 1;  
+	ADCSRA |= (1 << ADSC);
+	while (ADCSRA & (1 << ADSC));
+	return ADC;
+}
+
+
 void setup() {
 	cli();
 	SerialBegin(9600);
@@ -293,21 +305,40 @@ void setup() {
 	SetupPins();
 	LaserTimerSetup();
 	LifePwmSetup();
+	SetupAdc();
 	LedHandler();
 	sei();
 }
 
+char buffer[6];
 void loop() {
 	char c = BT_readFiltered();
 
-	if (c) {
-		SerialPrintln("BT recebeu:");
-		SerialPrintln(c);
+	int ldrValue = ReadLdr();
+	int i = 0;
+	int temp = ldrValue;
+	do {
+		buffer[i++] = (temp % 10) + '0';
+		temp /= 10;
+	} while (temp > 0);
 
-		if (c == 'a') {
-			SerialPrintln("igual a meu goat");
-		}
+	buffer[i] = '\0';
+	for(int j=0; j<i/2; j++){
+		char t = buffer[j];
+		buffer[j] = buffer[i-1-j];
+		buffer[i-1-j] = t;
 	}
+	SerialPrintln(buffer);
+	
+	
+	//if (c) {
+		//SerialPrintln("BT recebeu:");
+		//SerialPrintln(c);
+//
+		//if (c == 'a') {
+			//SerialPrintln("igual a meu goat");
+		//}
+	//}
 }
 
 
