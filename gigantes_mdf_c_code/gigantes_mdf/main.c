@@ -24,11 +24,10 @@ sem depender das bibliotecas prontas da Arduino IDE.
 
 // ===== HARDWARE E SETUP =====
 // [OK] Definir todos os pinos (motor, LDR, LED RGB, laser, BT)
-// [ ] Configurar timers para o laser piscar a cada 1 segundo
-// [ ] Configurar interrupções se necessário (LDR / UART software)
+// [OK] Configurar timers para o laser piscar a cada 1 segundo
 
 // ===== LASER =====
-// [ ] Implementar toggle do laser usando timer (pisca 1 Hz)
+// [OK] Implementar toggle do laser usando timer (pisca 1 Hz)
 
 // ===== LDR E DANO =====
 // [ ] Ler o LDR continuamente
@@ -38,13 +37,13 @@ sem depender das bibliotecas prontas da Arduino IDE.
 // [ ] Aguardar 5 segundos antes de voltar ao normal
 
 // ===== SISTEMA DE VIDAS =====
-// [ ] Criar variável de vidas (3 ? 0)
-// [ ] LED RGB verde para 3 vidas
-// [ ] LED RGB amarelo para 2 vidas
-// [ ] LED RGB vermelho para 1 vida
-// [ ] LED RGB desligado para 0 vidas
+// [OK Criar variável de vidas
+// [OK] LED RGB verde para 3 vidas
+// [OK] LED RGB amarelo para 2 vidas
+// [OK] LED RGB vermelho para 1 vida
+// [OK] LED RGB desligado para 0 vidas
 // [ ] Reduzir vida ao tomar dano
-// [ ] Travar o carrinho ao chegar em 0 vidas
+// [ ] Travar o carrinho sempre que tomar dano
 
 // ===== CONTROLE BLUETOOTH =====
 // [OK] Implementar UART por software (RX/TX em pinos digitais)
@@ -74,16 +73,17 @@ sem depender das bibliotecas prontas da Arduino IDE.
 //#define BT_TX_PIN  PB0 n precisa pq so to lendo dados do serial e nao escrevendo
 
 //PINOS
-#define MOTOR1_PWM 10  // PB2
-#define MOTOR2_PWM 11  // PB3
-#define MOTOR1_IN1 13  // PB5
-#define MOTOR1_IN2 12  // PB4
-#define MOTOR2_IN1 5   // PD5
-#define MOTOR2_IN2 4   // PD4
-#define LDR A1        // PC1
-#define LASER 7       // PD7
-#define RED_PIN A0        // PC0
-#define GREEN_PIN 6       // PD6
+#define MOTOR1_PWM PB2   //10
+#define MOTOR2_PWM PB3   //11
+#define MOTOR1_IN1 PB5   //13
+#define MOTOR1_IN2 PB4   //12
+#define MOTOR2_IN1 PD5   //5
+#define MOTOR2_IN2 PD4   //4
+#define LDR        PC1   //A1
+#define LASER      PD7   //7
+#define RED_PIN    PC0   //A0
+#define GREEN_PIN  PD6   //6
+
 
 #include <avr/io.h>
 #include <util/delay.h>
@@ -94,6 +94,12 @@ volatile uint8_t bt_bitIndex = 0;
 volatile uint8_t bt_currentByte = 0;
 volatile uint8_t bt_hasByte = 0;
 volatile uint8_t bt_syncPhase = 0;
+
+#define MAX_LIFES 3;
+
+
+int CurLifes = MAX_LIFES;
+int LaserOn = 0;
 
 
 void SerialBegin(unsigned long baud) {
@@ -202,12 +208,92 @@ char BT_readFiltered() {
 	return c;
 }
 
+
+void LedHandler() {
+	switch(CurLifes) {
+		case 3: 
+		PORTC &= ~(1 << RED_PIN); 
+		OCR0A = 255;              
+		break;
+		case 2:
+		PORTC |= (1 << RED_PIN); 
+		OCR0A = 30;               
+		break;
+		case 1: 
+		PORTC |= (1 << RED_PIN); 
+		OCR0A = 0;               
+		break;
+		default:
+		PORTC &= ~(1 << RED_PIN); 
+		OCR0A = 0;               
+		break;
+	}
+}
+
+
+void LaserHandle(){
+	LaserOn = !LaserOn;
+	if (LaserOn && CurLifes>0) {
+		PORTD |= (1 << LASER);
+	}
+	else {
+		PORTD &= ~(1 << LASER);
+	}
+}
+
+ISR(TIMER1_COMPA_vect) {
+	LaserHandle();
+}
+
+void LaserTimerSetup() {
+	//
+	//T = 1 sec
+	//Prescaler = 1024
+	//FCPU / Prescaler = 15.625 Hz
+	//1 = (limite + 1) / (16.000.000 / 1024 )
+	//limite = 15624
+	
+	//Setando prescaler 1024
+	
+	TCCR1A = 0;
+	TCCR1B = (1 << WGM12);
+	TCCR1B |= (1 << CS12) | (1 << CS10);
+	OCR1A = 15624;
+	TIMSK1 |= (1 << OCIE1A);
+}
+
+void SetupPins(){
+	//LASER OUTPUT
+	DDRD |= (1 << LASER);
+	//LEDF VERMELHO
+	DDRC |= (1 << RED_PIN); 
+	//LED VERDE
+	DDRD |= (1 << GREEN_PIN);  
+}
+
+void LifePwmSetup(){
+	TCCR0A = (1 << COM0A1) | (1 << WGM01) | (1 << WGM00);
+	TCCR0B = (1 << CS00);  
+	OCR0A = 0; 	
+}
+
+void ResetLifes(){
+	CurLifes = MAX_LIFES;
+}
+
 void setup() {
 	cli();
 	SerialBegin(9600);
 	SerialPrintln("Comecando");
 	BT_init();
 	SerialPrintln("bluetooth iniciado");
+	
+	
+	
+	SetupPins();
+	LaserTimerSetup();
+	LifePwmSetup();
+	LedHandler();
 	sei();
 }
 
