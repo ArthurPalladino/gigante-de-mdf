@@ -66,9 +66,12 @@ sem depender das bibliotecas prontas da Arduino IDE.
 // ------------------------------------------------------------
 
 //RESOLVER SITUACAO DO SOFTWARE SERIAL
-#define RX_HC05 9  
-#define TX_HC05 9
+#define BT_RX_PIN  PB1
+#define BT_RX_DDR   DDRB
+#define BT_RX_PORT  PORTB
+#define BT_RX_PINR  PINB
 
+//#define BT_TX_PIN  PB0 n precisa pq so to lendo dados do serial e nao escrevendo
 
 //PINOS
 #define MOTOR1_PWM 10  // PB2
@@ -84,21 +87,144 @@ sem depender das bibliotecas prontas da Arduino IDE.
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/interrupt.h>
 
-void setup()
-{
-	
+volatile uint8_t bt_receiving = 0;
+volatile uint8_t bt_bitIndex = 0;
+volatile uint8_t bt_currentByte = 0;
+volatile uint8_t bt_hasByte = 0;
+volatile uint8_t bt_syncPhase = 0;
+
+
+void SerialBegin(unsigned long baud) {
+	unsigned long ubrr = (F_CPU / (16UL * baud)) - 1;
+	UBRR0H = (unsigned char)(ubrr >> 8);
+	UBRR0L = (unsigned char)(ubrr);
+	UCSR0B = (1 << TXEN0) | (1 << RXEN0);
+	UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);
 }
 
-void loop()
-{
+void SerialSendChar(char c) {
+	while (!(UCSR0A & (1 << UDRE0)));
+	UDR0 = c;
+}
+
+char SerialReadChar() {
+	while (!(UCSR0A & (1 << RXC0)));
+	return UDR0;
+}
+
+char* SerialReadString() {
+	static char buffer[50];
+	uint8_t i = 0;
+
+	while (1) {
+		char c = SerialReadChar();
+		if (c == '\n' || c == '\r' || i >= sizeof(buffer) - 1) break;
+		buffer[i++] = c;
+	}
+
+	buffer[i] = '\0';
+	return buffer;
+}
+
+void SerialPrintln(const char *str) {
+	while (*str) SerialSendChar(*str++);
+	SerialSendChar('\r');
+	SerialSendChar('\n');
+}
+
+void BT_init() {
+	BT_RX_DDR &= ~(1 << BT_RX_PIN);
+	BT_RX_PORT |= (1 << BT_RX_PIN);
+
+	PCICR |= (1 << PCIE0);
+	PCMSK0 |= (1 << PCINT1);
+
+	TCCR2A = (1 << WGM21);
+	TCCR2B = (1 << CS21);
+	OCR2A = 208;
+	TIMSK2 = 0;
+}
+
+ISR(PCINT0_vect) {
+	if (bt_receiving) return;
+
+	if (!(BT_RX_PINR & (1 << BT_RX_PIN))) { 
+		bt_receiving = 1;
+		bt_bitIndex = 0;
+		bt_currentByte = 0;
+		bt_syncPhase = 1; 
+		TCNT2 = 0;
+		TIMSK2 |= (1 << OCIE2A);
+	}
 }
 
 
+ISR(TIMER2_COMPA_vect) {
+
+	if (bt_syncPhase) {
+		bt_syncPhase = 0;
+		TCNT2 = 0;   
+		return;
+	}
+
+	uint8_t bit = (BT_RX_PINR & (1 << BT_RX_PIN)) ? 1 : 0;
+
+	bt_currentByte >>= 1;
+	if (bit) bt_currentByte |= 0x80;
+
+	bt_bitIndex++;
+
+	if (bt_bitIndex >= 8) {
+		bt_receiving = 0;
+		bt_hasByte = 1;
+		TIMSK2 &= ~(1 << OCIE2A);
+	}
+}
 
 
+uint8_t BT_available() {
+	return bt_hasByte;
+}
 
-//Irei definir as funções setup e loop para não precisar mexer na main e facilitar a organização.
+char BT_read() {
+	bt_hasByte = 0;
+	return bt_currentByte;
+}
+
+char BT_readFiltered() {
+	if (!BT_available()) return 0;
+	char c = BT_read();
+	if (c == '\r' || c == '\n') {
+		return 0;
+	}
+	return c;
+}
+
+void setup() {
+	cli();
+	SerialBegin(9600);
+	SerialPrintln("Comecando");
+	BT_init();
+	SerialPrintln("bluetooth iniciado");
+	sei();
+}
+
+void loop() {
+	char c = BT_readFiltered();
+
+	if (c) {
+		SerialPrintln("BT recebeu:");
+		SerialPrintln(c);
+
+		if (c == 'a') {
+			SerialPrintln("igual a meu goat");
+		}
+	}
+}
+
+
 int main(void) {
 	setup();
 	while (1) {
