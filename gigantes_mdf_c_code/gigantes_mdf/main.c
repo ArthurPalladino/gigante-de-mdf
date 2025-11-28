@@ -47,8 +47,8 @@ sem depender das bibliotecas prontas da Arduino IDE.
 // [ ] Travar o carrinho ao chegar em 0 vidas
 
 // ===== CONTROLE BLUETOOTH =====
-// [ ] Implementar UART por software (RX/TX em pinos digitais)
-// [ ] Criar função de leitura UART por software
+// [OK] Implementar UART por software (RX/TX em pinos digitais)
+// [OK] Criar função de leitura UART por software
 // [ ] Mapear comandos do controle (frente, trás, esquerda, direita, parar)
 // [ ] Integrar comandos BT ao controle do motor
 
