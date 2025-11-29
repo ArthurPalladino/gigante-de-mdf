@@ -3,193 +3,181 @@ gigantes_mdf.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800100  00800100  000008c4  2**0
+  0 .data         00000000  00800100  00800100  0000088e  2**0
                   ALLOC, LOAD, DATA
-  1 .text         00000120  00000000  00000000  000000f4  2**1
+  1 .text         00000120  00000000  00000000  000000d4  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .comment      0000002f  00000000  00000000  000008c4  2**0
+  2 .comment      0000002f  00000000  00000000  0000088e  2**0
                   CONTENTS, READONLY
-  3 .stack.descriptors.hdr 0000002a  00000000  00000000  000008f3  2**0
-                  CONTENTS, READONLY
-  4 .debug_aranges 00000108  00000000  00000000  0000091d  2**0
+  3 .debug_aranges 00000108  00000000  00000000  000008bd  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00001147  00000000  00000000  00000a25  2**0
+  4 .debug_info   00001137  00000000  00000000  000009c5  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00000870  00000000  00000000  00001b6c  2**0
+  5 .debug_abbrev 00000863  00000000  00000000  00001afc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000008dd  00000000  00000000  000023dc  2**0
+  6 .debug_line   000008e2  00000000  00000000  0000235f  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  000002a4  00000000  00000000  00002cbc  2**2
+  7 .debug_frame  000002ac  00000000  00000000  00002c44  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000215  00000000  00000000  00002f60  2**0
+  8 .debug_str    00000215  00000000  00000000  00002ef0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    000003c3  00000000  00000000  00003175  2**0
+  9 .debug_loc    000003f1  00000000  00000000  00003105  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 000000f8  00000000  00000000  00003538  2**0
+ 10 .debug_ranges 000000f8  00000000  00000000  000034f6  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .text         00000004  000007c0  000007c0  000008b4  2**1
+ 11 .text         00000004  000007b4  000007b4  00000888  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 13 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00003630  2**2
+ 12 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000035f0  2**2
                   CONTENTS, READONLY, DEBUGGING
- 14 .text.SerialBegin 0000005e  000002c8  000002c8  000003bc  2**1
+ 13 .text.SerialBegin 0000005e  000002d2  000002d2  000003a6  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 15 .text.SerialSendChar 0000000e  00000772  00000772  00000866  2**1
+ 14 .text.SerialSendChar 0000000e  00000766  00000766  0000083a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 16 .text.SerialPrintln 00000038  00000554  00000554  00000648  2**1
+ 15 .text.SerialPrintln 00000038  0000055e  0000055e  00000632  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 17 .text.BT_init 00000036  0000058c  0000058c  00000680  2**1
+ 16 .text.BT_init 00000036  00000596  00000596  0000066a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 18 .text.__vector_3 0000004c  00000326  00000326  0000041a  2**1
+ 17 .text.__vector_3 0000004c  00000330  00000330  00000404  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 19 .text.__vector_7 00000076  00000252  00000252  00000346  2**1
+ 18 .text.__vector_7 00000076  0000025c  0000025c  00000330  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 20 .text.BT_available 00000006  000007ba  000007ba  000008ae  2**1
+ 19 .text.BT_available 00000006  000007ae  000007ae  00000882  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 21 .text.BT_read 0000000a  000007a6  000007a6  0000089a  2**1
+ 20 .text.BT_read 0000000a  0000079a  0000079a  0000086e  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 22 .text.BT_readFiltered 00000020  0000072a  0000072a  0000081e  2**1
+ 21 .text.BT_readFiltered 00000020  00000734  00000734  00000808  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 23 .text.LedHandler 00000046  00000404  00000404  000004f8  2**1
+ 22 .text.LedHandler 00000046  0000040e  0000040e  000004e2  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 24 .text.LaserHandle 0000004a  00000372  00000372  00000466  2**1
+ 23 .text.LaserHandle 0000004a  0000037c  0000037c  00000450  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 25 .text.__vector_11 00000048  000003bc  000003bc  000004b0  2**1
+ 24 .text.__vector_11 00000048  000003c6  000003c6  0000049a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 26 .text.LaserTimerSetup 0000002a  000006b2  000006b2  000007a6  2**1
+ 25 .text.LaserTimerSetup 0000002a  000006bc  000006bc  00000790  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 27 .text.SetupPins 00000026  00000704  00000704  000007f8  2**1
+ 26 .text.SetupPins 00000026  0000070e  0000070e  000007e2  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 28 .progmemx.data 0000007d  00000120  00000120  00000214  2**0
+ 27 .progmemx.data 0000007d  00000120  00000120  000001f4  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, PROGMEMX
- 29 .text.frente  00000030  000005c2  000005c2  000006b6  2**1
+ 28 .text.frente  00000030  000005cc  000005cc  000006a0  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 30 .text.tras    00000030  000005f2  000005f2  000006e6  2**1
+ 29 .text.tras    00000030  000005fc  000005fc  000006d0  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 31 .text.direita 00000030  00000622  00000622  00000716  2**1
+ 30 .text.direita 00000030  0000062c  0000062c  00000700  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 32 .text.esquerda 00000030  00000652  00000652  00000746  2**1
+ 31 .text.esquerda 00000030  0000065c  0000065c  00000730  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 33 .text.PararMotores 00000030  00000682  00000682  00000776  2**1
+ 32 .text.PararMotores 00000030  0000068c  0000068c  00000760  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 34 .text.Virar180 00000046  0000044a  0000044a  0000053e  2**1
+ 33 .text.Virar180 00000046  00000454  00000454  00000528  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 35 .text.LifePwmSetup 0000000c  0000078e  0000078e  00000882  2**1
+ 34 .text.LifePwmSetup 0000000c  00000782  00000782  00000856  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 36 .text.ResetLifes 00000012  00000760  00000760  00000854  2**1
+ 35 .text.ResetLifes 00000012  00000754  00000754  00000828  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 37 .text.SetupAdc 0000000e  00000780  00000780  00000874  2**1
+ 36 .text.SetupAdc 0000000e  00000774  00000774  00000848  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 38 .text.ReadLdr 00000028  000006dc  000006dc  000007d0  2**1
+ 37 .text.ReadLdr 00000028  000006e6  000006e6  000007ba  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 39 .text.setup   0000003e  00000516  00000516  0000060a  2**1
+ 38 .text.setup   0000003e  00000520  00000520  000005f4  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 40 .text.TakeDamage 00000042  000004d4  000004d4  000005c8  2**1
+ 39 .text.TakeDamage 00000042  000004de  000004de  000005b2  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 41 .text.loop    000000b4  0000019e  0000019e  00000292  2**1
+ 40 .text.loop    000000be  0000019e  0000019e  00000272  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 42 .text.main    0000000a  000007b0  000007b0  000008a4  2**1
+ 41 .text.main    0000000a  000007a4  000007a4  00000878  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 43 .bss.takenDamage 00000002  00800100  00800100  000008c4  2**0
+ 42 .bss.takenDamage 00000002  00800100  00800100  0000088e  2**0
                   ALLOC
- 44 .bss.LaserOn  00000002  00800102  00800102  000008c4  2**0
+ 43 .bss.LaserOn  00000002  00800102  00800102  0000088e  2**0
                   ALLOC
- 45 .data.CurLifes 00000002  00800104  000007ce  000008c2  2**0
+ 44 .data.CurLifes 00000002  00800104  000007b8  0000088c  2**0
                   CONTENTS, ALLOC, LOAD, DATA
- 46 .bss.bt_syncPhase 00000001  00800106  00800106  000008c4  2**0
+ 45 .bss.bt_syncPhase 00000001  00800106  00800106  0000088e  2**0
                   ALLOC
- 47 .bss.bt_hasByte 00000001  00800107  00800107  000008c4  2**0
+ 46 .bss.bt_hasByte 00000001  00800107  00800107  0000088e  2**0
                   ALLOC
- 48 .bss.bt_currentByte 00000001  00800108  00800108  000008c4  2**0
+ 47 .bss.bt_currentByte 00000001  00800108  00800108  0000088e  2**0
                   ALLOC
- 49 .bss.bt_bitIndex 00000001  00800109  00800109  000008c4  2**0
+ 48 .bss.bt_bitIndex 00000001  00800109  00800109  0000088e  2**0
                   ALLOC
- 50 .bss.bt_receiving 00000001  0080010a  0080010a  000008c4  2**0
+ 49 .bss.bt_receiving 00000001  0080010a  0080010a  0000088e  2**0
                   ALLOC
- 51 .text.libgcc.div 00000044  00000490  00000490  00000584  2**1
+ 50 .text.libgcc.div 00000044  0000049a  0000049a  0000056e  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 52 .text.libgcc  0000000c  0000079a  0000079a  0000088e  2**1
-                  CONTENTS, ALLOC, LOAD, READONLY, CODE
- 53 .text.__dummy_fini 00000002  000007c8  000007c8  000008bc  2**1
-                  CONTENTS, ALLOC, LOAD, READONLY, CODE
- 54 .text.__dummy_funcs_on_exit 00000002  000007ca  000007ca  000008be  2**1
-                  CONTENTS, ALLOC, LOAD, READONLY, CODE
- 55 .text.__dummy_simulator_exit 00000002  000007cc  000007cc  000008c0  2**1
-                  CONTENTS, ALLOC, LOAD, READONLY, CODE
- 56 .text.exit    00000016  0000074a  0000074a  0000083e  2**1
-                  CONTENTS, ALLOC, LOAD, READONLY, CODE
- 57 .text._Exit   00000004  000007c4  000007c4  000008b8  2**1
+ 51 .text.libgcc  0000000c  0000078e  0000078e  00000862  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 66 00 	jmp	0xcc	; 0xcc <__ctors_end>
-   4:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-   8:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-   c:	0c 94 93 01 	jmp	0x326	; 0x326 <__vector_3>
-  10:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  14:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  18:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  1c:	0c 94 29 01 	jmp	0x252	; 0x252 <__vector_7>
-  20:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  24:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  28:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  2c:	0c 94 de 01 	jmp	0x3bc	; 0x3bc <__vector_11>
-  30:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  34:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  38:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  3c:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  40:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  44:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  48:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  4c:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  50:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  54:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  58:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  5c:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  60:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  64:	0c 94 e0 03 	jmp	0x7c0	; 0x7c0 <__bad_interrupt>
-  68:	13 01       	movw	r2, r6
-  6a:	24 01       	movw	r4, r8
-  6c:	24 01       	movw	r4, r8
-  6e:	24 01       	movw	r4, r8
-  70:	10 01       	movw	r2, r0
-  72:	24 01       	movw	r4, r8
-  74:	22 01       	movw	r4, r4
-  76:	24 01       	movw	r4, r8
-  78:	22 01       	movw	r4, r4
-  7a:	24 01       	movw	r4, r8
-  7c:	19 01       	movw	r2, r18
-  7e:	24 01       	movw	r4, r8
-  80:	24 01       	movw	r4, r8
-  82:	24 01       	movw	r4, r8
-  84:	24 01       	movw	r4, r8
-  86:	24 01       	movw	r4, r8
-  88:	16 01       	movw	r2, r12
-  8a:	1c 01       	movw	r2, r24
-  8c:	24 01       	movw	r4, r8
-  8e:	24 01       	movw	r4, r8
-  90:	24 01       	movw	r4, r8
-  92:	24 01       	movw	r4, r8
-  94:	24 01       	movw	r4, r8
-  96:	1f 01       	movw	r2, r30
-  98:	24 01       	movw	r4, r8
-  9a:	24 01       	movw	r4, r8
-  9c:	24 01       	movw	r4, r8
-  9e:	24 01       	movw	r4, r8
-  a0:	24 01       	movw	r4, r8
-  a2:	24 01       	movw	r4, r8
-  a4:	24 01       	movw	r4, r8
-  a6:	24 01       	movw	r4, r8
-  a8:	24 01       	movw	r4, r8
-  aa:	24 01       	movw	r4, r8
-  ac:	24 01       	movw	r4, r8
-  ae:	24 01       	movw	r4, r8
-  b0:	24 01       	movw	r4, r8
-  b2:	24 01       	movw	r4, r8
-  b4:	22 01       	movw	r4, r4
-  b6:	24 01       	movw	r4, r8
-  b8:	22 01       	movw	r4, r4
+   4:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+   8:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+   c:	0c 94 98 01 	jmp	0x330	; 0x330 <__vector_3>
+  10:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  14:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  18:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  1c:	0c 94 2e 01 	jmp	0x25c	; 0x25c <__vector_7>
+  20:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  24:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  28:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  2c:	0c 94 e3 01 	jmp	0x3c6	; 0x3c6 <__vector_11>
+  30:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  34:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  38:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  3c:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  40:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  44:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  48:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  4c:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  50:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  54:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  58:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  5c:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  60:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  64:	0c 94 da 03 	jmp	0x7b4	; 0x7b4 <__bad_interrupt>
+  68:	1a 01       	movw	r2, r20
+  6a:	28 01       	movw	r4, r16
+  6c:	28 01       	movw	r4, r16
+  6e:	28 01       	movw	r4, r16
+  70:	17 01       	movw	r2, r14
+  72:	28 01       	movw	r4, r16
+  74:	26 01       	movw	r4, r12
+  76:	28 01       	movw	r4, r16
+  78:	26 01       	movw	r4, r12
+  7a:	28 01       	movw	r4, r16
+  7c:	20 01       	movw	r4, r0
+  7e:	28 01       	movw	r4, r16
+  80:	28 01       	movw	r4, r16
+  82:	28 01       	movw	r4, r16
+  84:	28 01       	movw	r4, r16
+  86:	28 01       	movw	r4, r16
+  88:	1d 01       	movw	r2, r26
+  8a:	23 01       	movw	r4, r6
+  8c:	28 01       	movw	r4, r16
+  8e:	28 01       	movw	r4, r16
+  90:	28 01       	movw	r4, r16
+  92:	28 01       	movw	r4, r16
+  94:	28 01       	movw	r4, r16
+  96:	28 01       	movw	r4, r16
+  98:	28 01       	movw	r4, r16
+  9a:	28 01       	movw	r4, r16
+  9c:	28 01       	movw	r4, r16
+  9e:	28 01       	movw	r4, r16
+  a0:	28 01       	movw	r4, r16
+  a2:	28 01       	movw	r4, r16
+  a4:	28 01       	movw	r4, r16
+  a6:	28 01       	movw	r4, r16
+  a8:	28 01       	movw	r4, r16
+  aa:	28 01       	movw	r4, r16
+  ac:	28 01       	movw	r4, r16
+  ae:	28 01       	movw	r4, r16
+  b0:	28 01       	movw	r4, r16
+  b2:	28 01       	movw	r4, r16
+  b4:	26 01       	movw	r4, r12
+  b6:	28 01       	movw	r4, r16
+  b8:	26 01       	movw	r4, r12
 
 000000ba <.dinit>:
   ba:	01 00       	.word	0x0001	; ????
@@ -197,7 +185,7 @@ Disassembly of section .text:
   be:	80 01       	movw	r16, r0
   c0:	04 01       	movw	r0, r8
   c2:	06 00       	.word	0x0006	; ????
-  c4:	07 ce       	rjmp	.-1010   	; 0xfffffcd4 <__eeprom_end+0xff7efcd4>
+  c4:	07 b8       	out	0x07, r0	; 7
   c6:	01 06       	cpc	r0, r17
   c8:	01 0b       	sbc	r16, r17
   ca:	80 00       	.word	0x0080	; ????
@@ -243,8 +231,8 @@ Disassembly of section .text:
  10e:	eb 3c       	cpi	r30, 0xCB	; 203
  110:	f4 07       	cpc	r31, r20
  112:	31 f7       	brne	.-52     	; 0xe0 <__do_copy_data+0x8>
- 114:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <main>
- 118:	0c 94 a5 03 	jmp	0x74a	; 0x74a <exit>
+ 114:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <main>
+ 118:	0c 94 8e 00 	jmp	0x11c	; 0x11c <_exit>
 
 0000011c <_exit>:
  11c:	f8 94       	cli
@@ -254,875 +242,875 @@ Disassembly of section .text:
 
 Disassembly of section .text:
 
-000007c0 <__bad_interrupt>:
- 7c0:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+000007b4 <__bad_interrupt>:
+ 7b4:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
 
 Disassembly of section .text.SerialBegin:
 
-000002c8 <SerialBegin>:
+000002d2 <SerialBegin>:
 		buffer[i++] = c;
 	}
 
 	buffer[i] = '\0';
 	return buffer;
 }
- 2c8:	dc 01       	movw	r26, r24
- 2ca:	cb 01       	movw	r24, r22
- 2cc:	88 0f       	add	r24, r24
- 2ce:	99 1f       	adc	r25, r25
- 2d0:	aa 1f       	adc	r26, r26
- 2d2:	bb 1f       	adc	r27, r27
- 2d4:	88 0f       	add	r24, r24
- 2d6:	99 1f       	adc	r25, r25
- 2d8:	aa 1f       	adc	r26, r26
- 2da:	bb 1f       	adc	r27, r27
- 2dc:	9c 01       	movw	r18, r24
- 2de:	ad 01       	movw	r20, r26
- 2e0:	22 0f       	add	r18, r18
- 2e2:	33 1f       	adc	r19, r19
- 2e4:	44 1f       	adc	r20, r20
- 2e6:	55 1f       	adc	r21, r21
- 2e8:	22 0f       	add	r18, r18
- 2ea:	33 1f       	adc	r19, r19
- 2ec:	44 1f       	adc	r20, r20
- 2ee:	55 1f       	adc	r21, r21
- 2f0:	60 e0       	ldi	r22, 0x00	; 0
- 2f2:	74 e2       	ldi	r23, 0x24	; 36
- 2f4:	84 ef       	ldi	r24, 0xF4	; 244
- 2f6:	90 e0       	ldi	r25, 0x00	; 0
- 2f8:	0e 94 48 02 	call	0x490	; 0x490 <__udivmodsi4>
- 2fc:	ba 01       	movw	r22, r20
- 2fe:	a9 01       	movw	r20, r18
- 300:	41 50       	subi	r20, 0x01	; 1
- 302:	51 09       	sbc	r21, r1
- 304:	61 09       	sbc	r22, r1
- 306:	71 09       	sbc	r23, r1
- 308:	bb 27       	eor	r27, r27
- 30a:	a7 2f       	mov	r26, r23
- 30c:	96 2f       	mov	r25, r22
- 30e:	85 2f       	mov	r24, r21
- 310:	80 93 c5 00 	sts	0x00C5, r24	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
- 314:	40 93 c4 00 	sts	0x00C4, r20	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
- 318:	88 e1       	ldi	r24, 0x18	; 24
- 31a:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
- 31e:	86 e0       	ldi	r24, 0x06	; 6
- 320:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7f80c2>
- 324:	08 95       	ret
+ 2d2:	dc 01       	movw	r26, r24
+ 2d4:	cb 01       	movw	r24, r22
+ 2d6:	88 0f       	add	r24, r24
+ 2d8:	99 1f       	adc	r25, r25
+ 2da:	aa 1f       	adc	r26, r26
+ 2dc:	bb 1f       	adc	r27, r27
+ 2de:	88 0f       	add	r24, r24
+ 2e0:	99 1f       	adc	r25, r25
+ 2e2:	aa 1f       	adc	r26, r26
+ 2e4:	bb 1f       	adc	r27, r27
+ 2e6:	9c 01       	movw	r18, r24
+ 2e8:	ad 01       	movw	r20, r26
+ 2ea:	22 0f       	add	r18, r18
+ 2ec:	33 1f       	adc	r19, r19
+ 2ee:	44 1f       	adc	r20, r20
+ 2f0:	55 1f       	adc	r21, r21
+ 2f2:	22 0f       	add	r18, r18
+ 2f4:	33 1f       	adc	r19, r19
+ 2f6:	44 1f       	adc	r20, r20
+ 2f8:	55 1f       	adc	r21, r21
+ 2fa:	60 e0       	ldi	r22, 0x00	; 0
+ 2fc:	74 e2       	ldi	r23, 0x24	; 36
+ 2fe:	84 ef       	ldi	r24, 0xF4	; 244
+ 300:	90 e0       	ldi	r25, 0x00	; 0
+ 302:	0e 94 4d 02 	call	0x49a	; 0x49a <__udivmodsi4>
+ 306:	ba 01       	movw	r22, r20
+ 308:	a9 01       	movw	r20, r18
+ 30a:	41 50       	subi	r20, 0x01	; 1
+ 30c:	51 09       	sbc	r21, r1
+ 30e:	61 09       	sbc	r22, r1
+ 310:	71 09       	sbc	r23, r1
+ 312:	bb 27       	eor	r27, r27
+ 314:	a7 2f       	mov	r26, r23
+ 316:	96 2f       	mov	r25, r22
+ 318:	85 2f       	mov	r24, r21
+ 31a:	80 93 c5 00 	sts	0x00C5, r24	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
+ 31e:	40 93 c4 00 	sts	0x00C4, r20	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
+ 322:	88 e1       	ldi	r24, 0x18	; 24
+ 324:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+ 328:	86 e0       	ldi	r24, 0x06	; 6
+ 32a:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7f80c2>
+ 32e:	08 95       	ret
 
 Disassembly of section .text.SerialSendChar:
 
-00000772 <SerialSendChar>:
+00000766 <SerialSendChar>:
 	UCSR0B = (1 << TXEN0) | (1 << RXEN0);
 	UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);
 }
 
 void SerialSendChar(char c) {
 	while (!(UCSR0A & (1 << UDRE0)));
- 772:	90 91 c0 00 	lds	r25, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
- 776:	95 ff       	sbrs	r25, 5
- 778:	fc cf       	rjmp	.-8      	; 0x772 <SerialSendChar>
+ 766:	90 91 c0 00 	lds	r25, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+ 76a:	95 ff       	sbrs	r25, 5
+ 76c:	fc cf       	rjmp	.-8      	; 0x766 <SerialSendChar>
 	UDR0 = c;
- 77a:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
- 77e:	08 95       	ret
+ 76e:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+ 772:	08 95       	ret
 
 Disassembly of section .text.SerialPrintln:
 
-00000554 <SerialPrintln>:
+0000055e <SerialPrintln>:
 
 	buffer[i] = '\0';
 	return buffer;
 }
 
 void SerialPrintln(const char *str) {
- 554:	cf 92       	push	r12
- 556:	df 92       	push	r13
- 558:	ef 92       	push	r14
- 55a:	6b 01       	movw	r12, r22
- 55c:	e8 2e       	mov	r14, r24
+ 55e:	cf 92       	push	r12
+ 560:	df 92       	push	r13
+ 562:	ef 92       	push	r14
+ 564:	6b 01       	movw	r12, r22
+ 566:	e8 2e       	mov	r14, r24
 	while (*str) SerialSendChar(*str++);
- 55e:	06 c0       	rjmp	.+12     	; 0x56c <SerialPrintln+0x18>
- 560:	9f ef       	ldi	r25, 0xFF	; 255
- 562:	c9 1a       	sub	r12, r25
- 564:	d9 0a       	sbc	r13, r25
- 566:	e9 0a       	sbc	r14, r25
- 568:	0e 94 b9 03 	call	0x772	; 0x772 <SerialSendChar>
- 56c:	f6 01       	movw	r30, r12
- 56e:	84 91       	lpm	r24, Z
- 570:	e7 fc       	sbrc	r14, 7
- 572:	80 81       	ld	r24, Z
- 574:	81 11       	cpse	r24, r1
- 576:	f4 cf       	rjmp	.-24     	; 0x560 <SerialPrintln+0xc>
+ 568:	06 c0       	rjmp	.+12     	; 0x576 <SerialPrintln+0x18>
+ 56a:	9f ef       	ldi	r25, 0xFF	; 255
+ 56c:	c9 1a       	sub	r12, r25
+ 56e:	d9 0a       	sbc	r13, r25
+ 570:	e9 0a       	sbc	r14, r25
+ 572:	0e 94 b3 03 	call	0x766	; 0x766 <SerialSendChar>
+ 576:	f6 01       	movw	r30, r12
+ 578:	84 91       	lpm	r24, Z
+ 57a:	e7 fc       	sbrc	r14, 7
+ 57c:	80 81       	ld	r24, Z
+ 57e:	81 11       	cpse	r24, r1
+ 580:	f4 cf       	rjmp	.-24     	; 0x56a <SerialPrintln+0xc>
 	SerialSendChar('\r');
- 578:	8d e0       	ldi	r24, 0x0D	; 13
- 57a:	0e 94 b9 03 	call	0x772	; 0x772 <SerialSendChar>
+ 582:	8d e0       	ldi	r24, 0x0D	; 13
+ 584:	0e 94 b3 03 	call	0x766	; 0x766 <SerialSendChar>
 	SerialSendChar('\n');
- 57e:	8a e0       	ldi	r24, 0x0A	; 10
- 580:	0e 94 b9 03 	call	0x772	; 0x772 <SerialSendChar>
+ 588:	8a e0       	ldi	r24, 0x0A	; 10
+ 58a:	0e 94 b3 03 	call	0x766	; 0x766 <SerialSendChar>
 }
- 584:	ef 90       	pop	r14
- 586:	df 90       	pop	r13
- 588:	cf 90       	pop	r12
- 58a:	08 95       	ret
+ 58e:	ef 90       	pop	r14
+ 590:	df 90       	pop	r13
+ 592:	cf 90       	pop	r12
+ 594:	08 95       	ret
 
 Disassembly of section .text.BT_init:
 
-0000058c <BT_init>:
+00000596 <BT_init>:
 
 void BT_init() {
 	BT_RX_DDR &= ~(1 << BT_RX_PIN);
- 58c:	84 b1       	in	r24, 0x04	; 4
- 58e:	8d 7f       	andi	r24, 0xFD	; 253
- 590:	84 b9       	out	0x04, r24	; 4
+ 596:	84 b1       	in	r24, 0x04	; 4
+ 598:	8d 7f       	andi	r24, 0xFD	; 253
+ 59a:	84 b9       	out	0x04, r24	; 4
 	BT_RX_PORT |= (1 << BT_RX_PIN);
- 592:	85 b1       	in	r24, 0x05	; 5
- 594:	82 60       	ori	r24, 0x02	; 2
- 596:	85 b9       	out	0x05, r24	; 5
+ 59c:	85 b1       	in	r24, 0x05	; 5
+ 59e:	82 60       	ori	r24, 0x02	; 2
+ 5a0:	85 b9       	out	0x05, r24	; 5
 
 	PCICR |= (1 << PCIE0);
- 598:	e8 e6       	ldi	r30, 0x68	; 104
- 59a:	f0 e0       	ldi	r31, 0x00	; 0
- 59c:	80 81       	ld	r24, Z
- 59e:	81 60       	ori	r24, 0x01	; 1
- 5a0:	80 83       	st	Z, r24
-	PCMSK0 |= (1 << PCINT1);
- 5a2:	eb e6       	ldi	r30, 0x6B	; 107
+ 5a2:	e8 e6       	ldi	r30, 0x68	; 104
  5a4:	f0 e0       	ldi	r31, 0x00	; 0
  5a6:	80 81       	ld	r24, Z
- 5a8:	82 60       	ori	r24, 0x02	; 2
+ 5a8:	81 60       	ori	r24, 0x01	; 1
  5aa:	80 83       	st	Z, r24
+	PCMSK0 |= (1 << PCINT1);
+ 5ac:	eb e6       	ldi	r30, 0x6B	; 107
+ 5ae:	f0 e0       	ldi	r31, 0x00	; 0
+ 5b0:	80 81       	ld	r24, Z
+ 5b2:	82 60       	ori	r24, 0x02	; 2
+ 5b4:	80 83       	st	Z, r24
 
 	TCCR2A = (1 << WGM21);
- 5ac:	82 e0       	ldi	r24, 0x02	; 2
- 5ae:	80 93 b0 00 	sts	0x00B0, r24	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7f80b0>
+ 5b6:	82 e0       	ldi	r24, 0x02	; 2
+ 5b8:	80 93 b0 00 	sts	0x00B0, r24	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7f80b0>
 	TCCR2B = (1 << CS21);
- 5b2:	80 93 b1 00 	sts	0x00B1, r24	; 0x8000b1 <__TEXT_REGION_LENGTH__+0x7f80b1>
+ 5bc:	80 93 b1 00 	sts	0x00B1, r24	; 0x8000b1 <__TEXT_REGION_LENGTH__+0x7f80b1>
 	OCR2A = 208;
- 5b6:	80 ed       	ldi	r24, 0xD0	; 208
- 5b8:	80 93 b3 00 	sts	0x00B3, r24	; 0x8000b3 <__TEXT_REGION_LENGTH__+0x7f80b3>
+ 5c0:	80 ed       	ldi	r24, 0xD0	; 208
+ 5c2:	80 93 b3 00 	sts	0x00B3, r24	; 0x8000b3 <__TEXT_REGION_LENGTH__+0x7f80b3>
 	TIMSK2 = 0;
- 5bc:	10 92 70 00 	sts	0x0070, r1	; 0x800070 <__TEXT_REGION_LENGTH__+0x7f8070>
- 5c0:	08 95       	ret
+ 5c6:	10 92 70 00 	sts	0x0070, r1	; 0x800070 <__TEXT_REGION_LENGTH__+0x7f8070>
+ 5ca:	08 95       	ret
 
 Disassembly of section .text.__vector_3:
 
-00000326 <__vector_3>:
+00000330 <__vector_3>:
 		buffer[i++] = c;
 	}
 
 	buffer[i] = '\0';
 	return buffer;
 }
- 326:	1f 92       	push	r1
- 328:	0f 92       	push	r0
- 32a:	0f b6       	in	r0, 0x3f	; 63
- 32c:	0f 92       	push	r0
- 32e:	11 24       	eor	r1, r1
- 330:	8f 93       	push	r24
- 332:	ef 93       	push	r30
- 334:	ff 93       	push	r31
- 336:	80 91 0a 01 	lds	r24, 0x010A	; 0x80010a <bt_receiving>
- 33a:	81 11       	cpse	r24, r1
- 33c:	12 c0       	rjmp	.+36     	; 0x362 <__vector_3+0x3c>
- 33e:	19 99       	sbic	0x03, 1	; 3
- 340:	10 c0       	rjmp	.+32     	; 0x362 <__vector_3+0x3c>
- 342:	81 e0       	ldi	r24, 0x01	; 1
- 344:	80 93 0a 01 	sts	0x010A, r24	; 0x80010a <bt_receiving>
- 348:	10 92 09 01 	sts	0x0109, r1	; 0x800109 <bt_bitIndex>
- 34c:	10 92 08 01 	sts	0x0108, r1	; 0x800108 <bt_currentByte>
- 350:	80 93 06 01 	sts	0x0106, r24	; 0x800106 <bt_syncPhase>
- 354:	10 92 b2 00 	sts	0x00B2, r1	; 0x8000b2 <__TEXT_REGION_LENGTH__+0x7f80b2>
- 358:	e0 e7       	ldi	r30, 0x70	; 112
- 35a:	f0 e0       	ldi	r31, 0x00	; 0
- 35c:	80 81       	ld	r24, Z
- 35e:	82 60       	ori	r24, 0x02	; 2
- 360:	80 83       	st	Z, r24
- 362:	ff 91       	pop	r31
- 364:	ef 91       	pop	r30
- 366:	8f 91       	pop	r24
- 368:	0f 90       	pop	r0
- 36a:	0f be       	out	0x3f, r0	; 63
- 36c:	0f 90       	pop	r0
- 36e:	1f 90       	pop	r1
- 370:	18 95       	reti
+ 330:	1f 92       	push	r1
+ 332:	0f 92       	push	r0
+ 334:	0f b6       	in	r0, 0x3f	; 63
+ 336:	0f 92       	push	r0
+ 338:	11 24       	eor	r1, r1
+ 33a:	8f 93       	push	r24
+ 33c:	ef 93       	push	r30
+ 33e:	ff 93       	push	r31
+ 340:	80 91 0a 01 	lds	r24, 0x010A	; 0x80010a <bt_receiving>
+ 344:	81 11       	cpse	r24, r1
+ 346:	12 c0       	rjmp	.+36     	; 0x36c <__vector_3+0x3c>
+ 348:	19 99       	sbic	0x03, 1	; 3
+ 34a:	10 c0       	rjmp	.+32     	; 0x36c <__vector_3+0x3c>
+ 34c:	81 e0       	ldi	r24, 0x01	; 1
+ 34e:	80 93 0a 01 	sts	0x010A, r24	; 0x80010a <bt_receiving>
+ 352:	10 92 09 01 	sts	0x0109, r1	; 0x800109 <bt_bitIndex>
+ 356:	10 92 08 01 	sts	0x0108, r1	; 0x800108 <bt_currentByte>
+ 35a:	80 93 06 01 	sts	0x0106, r24	; 0x800106 <bt_syncPhase>
+ 35e:	10 92 b2 00 	sts	0x00B2, r1	; 0x8000b2 <__TEXT_REGION_LENGTH__+0x7f80b2>
+ 362:	e0 e7       	ldi	r30, 0x70	; 112
+ 364:	f0 e0       	ldi	r31, 0x00	; 0
+ 366:	80 81       	ld	r24, Z
+ 368:	82 60       	ori	r24, 0x02	; 2
+ 36a:	80 83       	st	Z, r24
+ 36c:	ff 91       	pop	r31
+ 36e:	ef 91       	pop	r30
+ 370:	8f 91       	pop	r24
+ 372:	0f 90       	pop	r0
+ 374:	0f be       	out	0x3f, r0	; 63
+ 376:	0f 90       	pop	r0
+ 378:	1f 90       	pop	r1
+ 37a:	18 95       	reti
 
 Disassembly of section .text.__vector_7:
 
-00000252 <__vector_7>:
- 252:	1f 92       	push	r1
- 254:	0f 92       	push	r0
- 256:	0f b6       	in	r0, 0x3f	; 63
- 258:	0f 92       	push	r0
- 25a:	11 24       	eor	r1, r1
- 25c:	8f 93       	push	r24
- 25e:	9f 93       	push	r25
- 260:	ef 93       	push	r30
- 262:	ff 93       	push	r31
- 264:	80 91 06 01 	lds	r24, 0x0106	; 0x800106 <bt_syncPhase>
- 268:	88 23       	and	r24, r24
- 26a:	29 f0       	breq	.+10     	; 0x276 <__vector_7+0x24>
- 26c:	10 92 06 01 	sts	0x0106, r1	; 0x800106 <bt_syncPhase>
- 270:	10 92 b2 00 	sts	0x00B2, r1	; 0x8000b2 <__TEXT_REGION_LENGTH__+0x7f80b2>
- 274:	20 c0       	rjmp	.+64     	; 0x2b6 <__vector_7+0x64>
- 276:	93 b1       	in	r25, 0x03	; 3
- 278:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <bt_currentByte>
- 27c:	86 95       	lsr	r24
- 27e:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <bt_currentByte>
- 282:	91 ff       	sbrs	r25, 1
- 284:	05 c0       	rjmp	.+10     	; 0x290 <__vector_7+0x3e>
- 286:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <bt_currentByte>
- 28a:	80 68       	ori	r24, 0x80	; 128
- 28c:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <bt_currentByte>
- 290:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <bt_bitIndex>
- 294:	8f 5f       	subi	r24, 0xFF	; 255
- 296:	80 93 09 01 	sts	0x0109, r24	; 0x800109 <bt_bitIndex>
+0000025c <__vector_7>:
+ 25c:	1f 92       	push	r1
+ 25e:	0f 92       	push	r0
+ 260:	0f b6       	in	r0, 0x3f	; 63
+ 262:	0f 92       	push	r0
+ 264:	11 24       	eor	r1, r1
+ 266:	8f 93       	push	r24
+ 268:	9f 93       	push	r25
+ 26a:	ef 93       	push	r30
+ 26c:	ff 93       	push	r31
+ 26e:	80 91 06 01 	lds	r24, 0x0106	; 0x800106 <bt_syncPhase>
+ 272:	88 23       	and	r24, r24
+ 274:	29 f0       	breq	.+10     	; 0x280 <__vector_7+0x24>
+ 276:	10 92 06 01 	sts	0x0106, r1	; 0x800106 <bt_syncPhase>
+ 27a:	10 92 b2 00 	sts	0x00B2, r1	; 0x8000b2 <__TEXT_REGION_LENGTH__+0x7f80b2>
+ 27e:	20 c0       	rjmp	.+64     	; 0x2c0 <__vector_7+0x64>
+ 280:	93 b1       	in	r25, 0x03	; 3
+ 282:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <bt_currentByte>
+ 286:	86 95       	lsr	r24
+ 288:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <bt_currentByte>
+ 28c:	91 ff       	sbrs	r25, 1
+ 28e:	05 c0       	rjmp	.+10     	; 0x29a <__vector_7+0x3e>
+ 290:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <bt_currentByte>
+ 294:	80 68       	ori	r24, 0x80	; 128
+ 296:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <bt_currentByte>
  29a:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <bt_bitIndex>
- 29e:	88 30       	cpi	r24, 0x08	; 8
- 2a0:	50 f0       	brcs	.+20     	; 0x2b6 <__vector_7+0x64>
- 2a2:	10 92 0a 01 	sts	0x010A, r1	; 0x80010a <bt_receiving>
- 2a6:	81 e0       	ldi	r24, 0x01	; 1
- 2a8:	80 93 07 01 	sts	0x0107, r24	; 0x800107 <bt_hasByte>
- 2ac:	e0 e7       	ldi	r30, 0x70	; 112
- 2ae:	f0 e0       	ldi	r31, 0x00	; 0
- 2b0:	80 81       	ld	r24, Z
- 2b2:	8d 7f       	andi	r24, 0xFD	; 253
- 2b4:	80 83       	st	Z, r24
- 2b6:	ff 91       	pop	r31
- 2b8:	ef 91       	pop	r30
- 2ba:	9f 91       	pop	r25
- 2bc:	8f 91       	pop	r24
- 2be:	0f 90       	pop	r0
- 2c0:	0f be       	out	0x3f, r0	; 63
- 2c2:	0f 90       	pop	r0
- 2c4:	1f 90       	pop	r1
- 2c6:	18 95       	reti
+ 29e:	8f 5f       	subi	r24, 0xFF	; 255
+ 2a0:	80 93 09 01 	sts	0x0109, r24	; 0x800109 <bt_bitIndex>
+ 2a4:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <bt_bitIndex>
+ 2a8:	88 30       	cpi	r24, 0x08	; 8
+ 2aa:	50 f0       	brcs	.+20     	; 0x2c0 <__vector_7+0x64>
+ 2ac:	10 92 0a 01 	sts	0x010A, r1	; 0x80010a <bt_receiving>
+ 2b0:	81 e0       	ldi	r24, 0x01	; 1
+ 2b2:	80 93 07 01 	sts	0x0107, r24	; 0x800107 <bt_hasByte>
+ 2b6:	e0 e7       	ldi	r30, 0x70	; 112
+ 2b8:	f0 e0       	ldi	r31, 0x00	; 0
+ 2ba:	80 81       	ld	r24, Z
+ 2bc:	8d 7f       	andi	r24, 0xFD	; 253
+ 2be:	80 83       	st	Z, r24
+ 2c0:	ff 91       	pop	r31
+ 2c2:	ef 91       	pop	r30
+ 2c4:	9f 91       	pop	r25
+ 2c6:	8f 91       	pop	r24
+ 2c8:	0f 90       	pop	r0
+ 2ca:	0f be       	out	0x3f, r0	; 63
+ 2cc:	0f 90       	pop	r0
+ 2ce:	1f 90       	pop	r1
+ 2d0:	18 95       	reti
 
 Disassembly of section .text.BT_available:
 
-000007ba <BT_available>:
+000007ae <BT_available>:
 	}
 }
 
 
 uint8_t BT_available() {
 	return bt_hasByte;
- 7ba:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <bt_hasByte>
+ 7ae:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <bt_hasByte>
 }
- 7be:	08 95       	ret
+ 7b2:	08 95       	ret
 
 Disassembly of section .text.BT_read:
 
-000007a6 <BT_read>:
+0000079a <BT_read>:
 
 char BT_read() {
 	bt_hasByte = 0;
- 7a6:	10 92 07 01 	sts	0x0107, r1	; 0x800107 <bt_hasByte>
+ 79a:	10 92 07 01 	sts	0x0107, r1	; 0x800107 <bt_hasByte>
 	return bt_currentByte;
- 7aa:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <bt_currentByte>
+ 79e:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <bt_currentByte>
 }
- 7ae:	08 95       	ret
+ 7a2:	08 95       	ret
 
 Disassembly of section .text.BT_readFiltered:
 
-0000072a <BT_readFiltered>:
+00000734 <BT_readFiltered>:
 
 char BT_readFiltered() {
 	if (!BT_available()) return 0;
- 72a:	0e 94 dd 03 	call	0x7ba	; 0x7ba <BT_available>
- 72e:	88 23       	and	r24, r24
- 730:	41 f0       	breq	.+16     	; 0x742 <BT_readFiltered+0x18>
+ 734:	0e 94 d7 03 	call	0x7ae	; 0x7ae <BT_available>
+ 738:	88 23       	and	r24, r24
+ 73a:	41 f0       	breq	.+16     	; 0x74c <BT_readFiltered+0x18>
 	char c = BT_read();
- 732:	0e 94 d3 03 	call	0x7a6	; 0x7a6 <BT_read>
+ 73c:	0e 94 cd 03 	call	0x79a	; 0x79a <BT_read>
 	if (c == '\r' || c == '\n') {
- 736:	8d 30       	cpi	r24, 0x0D	; 13
- 738:	31 f0       	breq	.+12     	; 0x746 <BT_readFiltered+0x1c>
- 73a:	8a 30       	cpi	r24, 0x0A	; 10
- 73c:	29 f4       	brne	.+10     	; 0x748 <BT_readFiltered+0x1e>
+ 740:	8d 30       	cpi	r24, 0x0D	; 13
+ 742:	31 f0       	breq	.+12     	; 0x750 <BT_readFiltered+0x1c>
+ 744:	8a 30       	cpi	r24, 0x0A	; 10
+ 746:	29 f4       	brne	.+10     	; 0x752 <BT_readFiltered+0x1e>
 		return 0;
- 73e:	80 e0       	ldi	r24, 0x00	; 0
- 740:	08 95       	ret
+ 748:	80 e0       	ldi	r24, 0x00	; 0
+ 74a:	08 95       	ret
 	bt_hasByte = 0;
 	return bt_currentByte;
 }
 
 char BT_readFiltered() {
 	if (!BT_available()) return 0;
- 742:	80 e0       	ldi	r24, 0x00	; 0
- 744:	08 95       	ret
+ 74c:	80 e0       	ldi	r24, 0x00	; 0
+ 74e:	08 95       	ret
 	char c = BT_read();
 	if (c == '\r' || c == '\n') {
 		return 0;
- 746:	80 e0       	ldi	r24, 0x00	; 0
+ 750:	80 e0       	ldi	r24, 0x00	; 0
 	}
 	return c;
 }
- 748:	08 95       	ret
+ 752:	08 95       	ret
 
 Disassembly of section .text.LedHandler:
 
-00000404 <LedHandler>:
+0000040e <LedHandler>:
 		buffer[i++] = c;
 	}
 
 	buffer[i] = '\0';
 	return buffer;
 }
- 404:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <CurLifes>
- 408:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <CurLifes+0x1>
- 40c:	82 30       	cpi	r24, 0x02	; 2
- 40e:	91 05       	cpc	r25, r1
- 410:	61 f0       	breq	.+24     	; 0x42a <LedHandler+0x26>
- 412:	83 30       	cpi	r24, 0x03	; 3
- 414:	91 05       	cpc	r25, r1
- 416:	19 f0       	breq	.+6      	; 0x41e <LedHandler+0x1a>
- 418:	01 97       	sbiw	r24, 0x01	; 1
- 41a:	91 f4       	brne	.+36     	; 0x440 <LedHandler+0x3c>
- 41c:	0c c0       	rjmp	.+24     	; 0x436 <LedHandler+0x32>
- 41e:	88 b1       	in	r24, 0x08	; 8
- 420:	8e 7f       	andi	r24, 0xFE	; 254
- 422:	88 b9       	out	0x08, r24	; 8
- 424:	8f ef       	ldi	r24, 0xFF	; 255
- 426:	87 bd       	out	0x27, r24	; 39
- 428:	08 95       	ret
- 42a:	88 b1       	in	r24, 0x08	; 8
- 42c:	81 60       	ori	r24, 0x01	; 1
- 42e:	88 b9       	out	0x08, r24	; 8
- 430:	8e e1       	ldi	r24, 0x1E	; 30
- 432:	87 bd       	out	0x27, r24	; 39
- 434:	08 95       	ret
- 436:	88 b1       	in	r24, 0x08	; 8
- 438:	81 60       	ori	r24, 0x01	; 1
- 43a:	88 b9       	out	0x08, r24	; 8
- 43c:	17 bc       	out	0x27, r1	; 39
+ 40e:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <CurLifes>
+ 412:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <CurLifes+0x1>
+ 416:	82 30       	cpi	r24, 0x02	; 2
+ 418:	91 05       	cpc	r25, r1
+ 41a:	61 f0       	breq	.+24     	; 0x434 <LedHandler+0x26>
+ 41c:	83 30       	cpi	r24, 0x03	; 3
+ 41e:	91 05       	cpc	r25, r1
+ 420:	19 f0       	breq	.+6      	; 0x428 <LedHandler+0x1a>
+ 422:	01 97       	sbiw	r24, 0x01	; 1
+ 424:	91 f4       	brne	.+36     	; 0x44a <LedHandler+0x3c>
+ 426:	0c c0       	rjmp	.+24     	; 0x440 <LedHandler+0x32>
+ 428:	88 b1       	in	r24, 0x08	; 8
+ 42a:	8e 7f       	andi	r24, 0xFE	; 254
+ 42c:	88 b9       	out	0x08, r24	; 8
+ 42e:	8f ef       	ldi	r24, 0xFF	; 255
+ 430:	87 bd       	out	0x27, r24	; 39
+ 432:	08 95       	ret
+ 434:	88 b1       	in	r24, 0x08	; 8
+ 436:	81 60       	ori	r24, 0x01	; 1
+ 438:	88 b9       	out	0x08, r24	; 8
+ 43a:	8e e1       	ldi	r24, 0x1E	; 30
+ 43c:	87 bd       	out	0x27, r24	; 39
  43e:	08 95       	ret
  440:	88 b1       	in	r24, 0x08	; 8
- 442:	8e 7f       	andi	r24, 0xFE	; 254
+ 442:	81 60       	ori	r24, 0x01	; 1
  444:	88 b9       	out	0x08, r24	; 8
  446:	17 bc       	out	0x27, r1	; 39
  448:	08 95       	ret
+ 44a:	88 b1       	in	r24, 0x08	; 8
+ 44c:	8e 7f       	andi	r24, 0xFE	; 254
+ 44e:	88 b9       	out	0x08, r24	; 8
+ 450:	17 bc       	out	0x27, r1	; 39
+ 452:	08 95       	ret
 
 Disassembly of section .text.LaserHandle:
 
-00000372 <LaserHandle>:
- 372:	81 e0       	ldi	r24, 0x01	; 1
- 374:	90 e0       	ldi	r25, 0x00	; 0
- 376:	20 91 02 01 	lds	r18, 0x0102	; 0x800102 <LaserOn>
- 37a:	30 91 03 01 	lds	r19, 0x0103	; 0x800103 <LaserOn+0x1>
- 37e:	23 2b       	or	r18, r19
- 380:	11 f0       	breq	.+4      	; 0x386 <LaserHandle+0x14>
- 382:	80 e0       	ldi	r24, 0x00	; 0
- 384:	90 e0       	ldi	r25, 0x00	; 0
- 386:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <LaserOn+0x1>
- 38a:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <LaserOn>
- 38e:	89 2b       	or	r24, r25
- 390:	89 f0       	breq	.+34     	; 0x3b4 <LaserHandle+0x42>
- 392:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <CurLifes>
- 396:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <CurLifes+0x1>
- 39a:	18 16       	cp	r1, r24
- 39c:	19 06       	cpc	r1, r25
- 39e:	54 f4       	brge	.+20     	; 0x3b4 <LaserHandle+0x42>
- 3a0:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
- 3a4:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
- 3a8:	89 2b       	or	r24, r25
- 3aa:	21 f4       	brne	.+8      	; 0x3b4 <LaserHandle+0x42>
- 3ac:	8b b1       	in	r24, 0x0b	; 11
- 3ae:	80 68       	ori	r24, 0x80	; 128
- 3b0:	8b b9       	out	0x0b, r24	; 11
- 3b2:	08 95       	ret
- 3b4:	8b b1       	in	r24, 0x0b	; 11
- 3b6:	8f 77       	andi	r24, 0x7F	; 127
- 3b8:	8b b9       	out	0x0b, r24	; 11
- 3ba:	08 95       	ret
+0000037c <LaserHandle>:
+ 37c:	81 e0       	ldi	r24, 0x01	; 1
+ 37e:	90 e0       	ldi	r25, 0x00	; 0
+ 380:	20 91 02 01 	lds	r18, 0x0102	; 0x800102 <LaserOn>
+ 384:	30 91 03 01 	lds	r19, 0x0103	; 0x800103 <LaserOn+0x1>
+ 388:	23 2b       	or	r18, r19
+ 38a:	11 f0       	breq	.+4      	; 0x390 <LaserHandle+0x14>
+ 38c:	80 e0       	ldi	r24, 0x00	; 0
+ 38e:	90 e0       	ldi	r25, 0x00	; 0
+ 390:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <LaserOn+0x1>
+ 394:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <LaserOn>
+ 398:	89 2b       	or	r24, r25
+ 39a:	89 f0       	breq	.+34     	; 0x3be <LaserHandle+0x42>
+ 39c:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <CurLifes>
+ 3a0:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <CurLifes+0x1>
+ 3a4:	18 16       	cp	r1, r24
+ 3a6:	19 06       	cpc	r1, r25
+ 3a8:	54 f4       	brge	.+20     	; 0x3be <LaserHandle+0x42>
+ 3aa:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 3ae:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 3b2:	89 2b       	or	r24, r25
+ 3b4:	21 f4       	brne	.+8      	; 0x3be <LaserHandle+0x42>
+ 3b6:	8b b1       	in	r24, 0x0b	; 11
+ 3b8:	80 68       	ori	r24, 0x80	; 128
+ 3ba:	8b b9       	out	0x0b, r24	; 11
+ 3bc:	08 95       	ret
+ 3be:	8b b1       	in	r24, 0x0b	; 11
+ 3c0:	8f 77       	andi	r24, 0x7F	; 127
+ 3c2:	8b b9       	out	0x0b, r24	; 11
+ 3c4:	08 95       	ret
 
 Disassembly of section .text.__vector_11:
 
-000003bc <__vector_11>:
- 3bc:	1f 92       	push	r1
- 3be:	0f 92       	push	r0
- 3c0:	0f b6       	in	r0, 0x3f	; 63
- 3c2:	0f 92       	push	r0
- 3c4:	11 24       	eor	r1, r1
- 3c6:	2f 93       	push	r18
- 3c8:	3f 93       	push	r19
- 3ca:	4f 93       	push	r20
- 3cc:	5f 93       	push	r21
- 3ce:	6f 93       	push	r22
- 3d0:	7f 93       	push	r23
- 3d2:	8f 93       	push	r24
- 3d4:	9f 93       	push	r25
- 3d6:	af 93       	push	r26
- 3d8:	bf 93       	push	r27
- 3da:	ef 93       	push	r30
- 3dc:	ff 93       	push	r31
- 3de:	0e 94 b9 01 	call	0x372	; 0x372 <LaserHandle>
- 3e2:	ff 91       	pop	r31
- 3e4:	ef 91       	pop	r30
- 3e6:	bf 91       	pop	r27
- 3e8:	af 91       	pop	r26
- 3ea:	9f 91       	pop	r25
- 3ec:	8f 91       	pop	r24
- 3ee:	7f 91       	pop	r23
- 3f0:	6f 91       	pop	r22
- 3f2:	5f 91       	pop	r21
- 3f4:	4f 91       	pop	r20
- 3f6:	3f 91       	pop	r19
- 3f8:	2f 91       	pop	r18
- 3fa:	0f 90       	pop	r0
- 3fc:	0f be       	out	0x3f, r0	; 63
- 3fe:	0f 90       	pop	r0
- 400:	1f 90       	pop	r1
- 402:	18 95       	reti
+000003c6 <__vector_11>:
+ 3c6:	1f 92       	push	r1
+ 3c8:	0f 92       	push	r0
+ 3ca:	0f b6       	in	r0, 0x3f	; 63
+ 3cc:	0f 92       	push	r0
+ 3ce:	11 24       	eor	r1, r1
+ 3d0:	2f 93       	push	r18
+ 3d2:	3f 93       	push	r19
+ 3d4:	4f 93       	push	r20
+ 3d6:	5f 93       	push	r21
+ 3d8:	6f 93       	push	r22
+ 3da:	7f 93       	push	r23
+ 3dc:	8f 93       	push	r24
+ 3de:	9f 93       	push	r25
+ 3e0:	af 93       	push	r26
+ 3e2:	bf 93       	push	r27
+ 3e4:	ef 93       	push	r30
+ 3e6:	ff 93       	push	r31
+ 3e8:	0e 94 be 01 	call	0x37c	; 0x37c <LaserHandle>
+ 3ec:	ff 91       	pop	r31
+ 3ee:	ef 91       	pop	r30
+ 3f0:	bf 91       	pop	r27
+ 3f2:	af 91       	pop	r26
+ 3f4:	9f 91       	pop	r25
+ 3f6:	8f 91       	pop	r24
+ 3f8:	7f 91       	pop	r23
+ 3fa:	6f 91       	pop	r22
+ 3fc:	5f 91       	pop	r21
+ 3fe:	4f 91       	pop	r20
+ 400:	3f 91       	pop	r19
+ 402:	2f 91       	pop	r18
+ 404:	0f 90       	pop	r0
+ 406:	0f be       	out	0x3f, r0	; 63
+ 408:	0f 90       	pop	r0
+ 40a:	1f 90       	pop	r1
+ 40c:	18 95       	reti
 
 Disassembly of section .text.LaserTimerSetup:
 
-000006b2 <LaserTimerSetup>:
+000006bc <LaserTimerSetup>:
 	//1 = (limite + 1) / (16.000.000 / 1024 )
 	//limite = 15624
 	
 	//Setando prescaler 1024
 	
 	TCCR1A = 0;
- 6b2:	10 92 80 00 	sts	0x0080, r1	; 0x800080 <__TEXT_REGION_LENGTH__+0x7f8080>
+ 6bc:	10 92 80 00 	sts	0x0080, r1	; 0x800080 <__TEXT_REGION_LENGTH__+0x7f8080>
 	TCCR1B = (1 << WGM12);
- 6b6:	e1 e8       	ldi	r30, 0x81	; 129
- 6b8:	f0 e0       	ldi	r31, 0x00	; 0
- 6ba:	88 e0       	ldi	r24, 0x08	; 8
- 6bc:	80 83       	st	Z, r24
-	TCCR1B |= (1 << CS12) | (1 << CS10);
- 6be:	80 81       	ld	r24, Z
- 6c0:	85 60       	ori	r24, 0x05	; 5
- 6c2:	80 83       	st	Z, r24
-	OCR1A = 15624;
+ 6c0:	e1 e8       	ldi	r30, 0x81	; 129
+ 6c2:	f0 e0       	ldi	r31, 0x00	; 0
  6c4:	88 e0       	ldi	r24, 0x08	; 8
- 6c6:	9d e3       	ldi	r25, 0x3D	; 61
- 6c8:	90 93 89 00 	sts	0x0089, r25	; 0x800089 <__TEXT_REGION_LENGTH__+0x7f8089>
- 6cc:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__TEXT_REGION_LENGTH__+0x7f8088>
+ 6c6:	80 83       	st	Z, r24
+	TCCR1B |= (1 << CS12) | (1 << CS10);
+ 6c8:	80 81       	ld	r24, Z
+ 6ca:	85 60       	ori	r24, 0x05	; 5
+ 6cc:	80 83       	st	Z, r24
+	OCR1A = 15624;
+ 6ce:	88 e0       	ldi	r24, 0x08	; 8
+ 6d0:	9d e3       	ldi	r25, 0x3D	; 61
+ 6d2:	90 93 89 00 	sts	0x0089, r25	; 0x800089 <__TEXT_REGION_LENGTH__+0x7f8089>
+ 6d6:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__TEXT_REGION_LENGTH__+0x7f8088>
 	TIMSK1 |= (1 << OCIE1A);
- 6d0:	ef e6       	ldi	r30, 0x6F	; 111
- 6d2:	f0 e0       	ldi	r31, 0x00	; 0
- 6d4:	80 81       	ld	r24, Z
- 6d6:	82 60       	ori	r24, 0x02	; 2
- 6d8:	80 83       	st	Z, r24
- 6da:	08 95       	ret
+ 6da:	ef e6       	ldi	r30, 0x6F	; 111
+ 6dc:	f0 e0       	ldi	r31, 0x00	; 0
+ 6de:	80 81       	ld	r24, Z
+ 6e0:	82 60       	ori	r24, 0x02	; 2
+ 6e2:	80 83       	st	Z, r24
+ 6e4:	08 95       	ret
 
 Disassembly of section .text.SetupPins:
 
-00000704 <SetupPins>:
+0000070e <SetupPins>:
 }
 
 void SetupPins(){
 	//LASER OUTPUT
 	DDRD |= (1 << LASER);
- 704:	8a b1       	in	r24, 0x0a	; 10
- 706:	80 68       	ori	r24, 0x80	; 128
- 708:	8a b9       	out	0x0a, r24	; 10
+ 70e:	8a b1       	in	r24, 0x0a	; 10
+ 710:	80 68       	ori	r24, 0x80	; 128
+ 712:	8a b9       	out	0x0a, r24	; 10
 	//LEDF VERMELHO
 	DDRC |= (1 << RED_PIN); 
- 70a:	87 b1       	in	r24, 0x07	; 7
- 70c:	81 60       	ori	r24, 0x01	; 1
- 70e:	87 b9       	out	0x07, r24	; 7
+ 714:	87 b1       	in	r24, 0x07	; 7
+ 716:	81 60       	ori	r24, 0x01	; 1
+ 718:	87 b9       	out	0x07, r24	; 7
 	//LED VERDE
 	DDRD |= (1 << GREEN_PIN);  
- 710:	8a b1       	in	r24, 0x0a	; 10
- 712:	80 64       	ori	r24, 0x40	; 64
- 714:	8a b9       	out	0x0a, r24	; 10
+ 71a:	8a b1       	in	r24, 0x0a	; 10
+ 71c:	80 64       	ori	r24, 0x40	; 64
+ 71e:	8a b9       	out	0x0a, r24	; 10
 	
 	//motor1 PWM + IN1 + IN2
 	DDRB |= (1 << PB2) | (1 << PB3) | (1 << PB4) ;
- 716:	84 b1       	in	r24, 0x04	; 4
- 718:	8c 61       	ori	r24, 0x1C	; 28
- 71a:	84 b9       	out	0x04, r24	; 4
+ 720:	84 b1       	in	r24, 0x04	; 4
+ 722:	8c 61       	ori	r24, 0x1C	; 28
+ 724:	84 b9       	out	0x04, r24	; 4
 
 	// motor2 PWM motor2 IN1 + IN2
 	DDRB |= (1 << PB5);
- 71c:	84 b1       	in	r24, 0x04	; 4
- 71e:	80 62       	ori	r24, 0x20	; 32
- 720:	84 b9       	out	0x04, r24	; 4
+ 726:	84 b1       	in	r24, 0x04	; 4
+ 728:	80 62       	ori	r24, 0x20	; 32
+ 72a:	84 b9       	out	0x04, r24	; 4
 	DDRD |= (1 << PD4) | (1 << PD5);
- 722:	8a b1       	in	r24, 0x0a	; 10
- 724:	80 63       	ori	r24, 0x30	; 48
- 726:	8a b9       	out	0x0a, r24	; 10
- 728:	08 95       	ret
+ 72c:	8a b1       	in	r24, 0x0a	; 10
+ 72e:	80 63       	ori	r24, 0x30	; 48
+ 730:	8a b9       	out	0x0a, r24	; 10
+ 732:	08 95       	ret
 
 Disassembly of section .text.frente:
 
-000005c2 <frente>:
+000005cc <frente>:
 	
 }
 
 void frente() {
 	SerialPrintln("indo pra frente");
- 5c2:	60 e2       	ldi	r22, 0x20	; 32
- 5c4:	71 e0       	ldi	r23, 0x01	; 1
- 5c6:	80 e0       	ldi	r24, 0x00	; 0
- 5c8:	0e 94 aa 02 	call	0x554	; 0x554 <SerialPrintln>
+ 5cc:	60 e2       	ldi	r22, 0x20	; 32
+ 5ce:	71 e0       	ldi	r23, 0x01	; 1
+ 5d0:	80 e0       	ldi	r24, 0x00	; 0
+ 5d2:	0e 94 af 02 	call	0x55e	; 0x55e <SerialPrintln>
 	// Motor 1
 	PORTB &= ~(1 << MOTOR1_IN1);   
- 5cc:	85 b1       	in	r24, 0x05	; 5
- 5ce:	8f 7d       	andi	r24, 0xDF	; 223
- 5d0:	85 b9       	out	0x05, r24	; 5
+ 5d6:	85 b1       	in	r24, 0x05	; 5
+ 5d8:	8f 7d       	andi	r24, 0xDF	; 223
+ 5da:	85 b9       	out	0x05, r24	; 5
 	PORTB |=  (1 << MOTOR1_IN2);   
- 5d2:	85 b1       	in	r24, 0x05	; 5
- 5d4:	80 61       	ori	r24, 0x10	; 16
- 5d6:	85 b9       	out	0x05, r24	; 5
+ 5dc:	85 b1       	in	r24, 0x05	; 5
+ 5de:	80 61       	ori	r24, 0x10	; 16
+ 5e0:	85 b9       	out	0x05, r24	; 5
 	PORTB |=  (1 << MOTOR1_PWM);   
- 5d8:	85 b1       	in	r24, 0x05	; 5
- 5da:	84 60       	ori	r24, 0x04	; 4
- 5dc:	85 b9       	out	0x05, r24	; 5
+ 5e2:	85 b1       	in	r24, 0x05	; 5
+ 5e4:	84 60       	ori	r24, 0x04	; 4
+ 5e6:	85 b9       	out	0x05, r24	; 5
 
 	// Motor 2 (invertido)
 	PORTD &= ~(1 << MOTOR2_IN1);
- 5de:	8b b1       	in	r24, 0x0b	; 11
- 5e0:	8f 7d       	andi	r24, 0xDF	; 223
- 5e2:	8b b9       	out	0x0b, r24	; 11
+ 5e8:	8b b1       	in	r24, 0x0b	; 11
+ 5ea:	8f 7d       	andi	r24, 0xDF	; 223
+ 5ec:	8b b9       	out	0x0b, r24	; 11
 	PORTD |=  (1 << MOTOR2_IN2); 
- 5e4:	8b b1       	in	r24, 0x0b	; 11
- 5e6:	80 61       	ori	r24, 0x10	; 16
- 5e8:	8b b9       	out	0x0b, r24	; 11
+ 5ee:	8b b1       	in	r24, 0x0b	; 11
+ 5f0:	80 61       	ori	r24, 0x10	; 16
+ 5f2:	8b b9       	out	0x0b, r24	; 11
 	PORTB |=  (1 << MOTOR2_PWM);
- 5ea:	85 b1       	in	r24, 0x05	; 5
- 5ec:	88 60       	ori	r24, 0x08	; 8
- 5ee:	85 b9       	out	0x05, r24	; 5
- 5f0:	08 95       	ret
+ 5f4:	85 b1       	in	r24, 0x05	; 5
+ 5f6:	88 60       	ori	r24, 0x08	; 8
+ 5f8:	85 b9       	out	0x05, r24	; 5
+ 5fa:	08 95       	ret
 
 Disassembly of section .text.tras:
 
-000005f2 <tras>:
+000005fc <tras>:
 }
 
 void tras() {
 	SerialPrintln("indo pra tras");
- 5f2:	60 e3       	ldi	r22, 0x30	; 48
- 5f4:	71 e0       	ldi	r23, 0x01	; 1
- 5f6:	80 e0       	ldi	r24, 0x00	; 0
- 5f8:	0e 94 aa 02 	call	0x554	; 0x554 <SerialPrintln>
+ 5fc:	60 e3       	ldi	r22, 0x30	; 48
+ 5fe:	71 e0       	ldi	r23, 0x01	; 1
+ 600:	80 e0       	ldi	r24, 0x00	; 0
+ 602:	0e 94 af 02 	call	0x55e	; 0x55e <SerialPrintln>
 	//Motor1
 	PORTB |=  (1 << MOTOR1_IN1);  
- 5fc:	85 b1       	in	r24, 0x05	; 5
- 5fe:	80 62       	ori	r24, 0x20	; 32
- 600:	85 b9       	out	0x05, r24	; 5
+ 606:	85 b1       	in	r24, 0x05	; 5
+ 608:	80 62       	ori	r24, 0x20	; 32
+ 60a:	85 b9       	out	0x05, r24	; 5
 	PORTB &= ~(1 << MOTOR1_IN2); 
- 602:	85 b1       	in	r24, 0x05	; 5
- 604:	8f 7e       	andi	r24, 0xEF	; 239
- 606:	85 b9       	out	0x05, r24	; 5
+ 60c:	85 b1       	in	r24, 0x05	; 5
+ 60e:	8f 7e       	andi	r24, 0xEF	; 239
+ 610:	85 b9       	out	0x05, r24	; 5
 	PORTB |=  (1 << MOTOR1_PWM);
- 608:	85 b1       	in	r24, 0x05	; 5
- 60a:	84 60       	ori	r24, 0x04	; 4
- 60c:	85 b9       	out	0x05, r24	; 5
+ 612:	85 b1       	in	r24, 0x05	; 5
+ 614:	84 60       	ori	r24, 0x04	; 4
+ 616:	85 b9       	out	0x05, r24	; 5
 
 	//Motor 2 (invertido)
 	PORTD |=  (1 << MOTOR2_IN1);  
- 60e:	8b b1       	in	r24, 0x0b	; 11
- 610:	80 62       	ori	r24, 0x20	; 32
- 612:	8b b9       	out	0x0b, r24	; 11
+ 618:	8b b1       	in	r24, 0x0b	; 11
+ 61a:	80 62       	ori	r24, 0x20	; 32
+ 61c:	8b b9       	out	0x0b, r24	; 11
 	PORTD &= ~(1 << MOTOR2_IN2); 
- 614:	8b b1       	in	r24, 0x0b	; 11
- 616:	8f 7e       	andi	r24, 0xEF	; 239
- 618:	8b b9       	out	0x0b, r24	; 11
+ 61e:	8b b1       	in	r24, 0x0b	; 11
+ 620:	8f 7e       	andi	r24, 0xEF	; 239
+ 622:	8b b9       	out	0x0b, r24	; 11
 	PORTB |=  (1 << MOTOR2_PWM);
- 61a:	85 b1       	in	r24, 0x05	; 5
- 61c:	88 60       	ori	r24, 0x08	; 8
- 61e:	85 b9       	out	0x05, r24	; 5
- 620:	08 95       	ret
+ 624:	85 b1       	in	r24, 0x05	; 5
+ 626:	88 60       	ori	r24, 0x08	; 8
+ 628:	85 b9       	out	0x05, r24	; 5
+ 62a:	08 95       	ret
 
 Disassembly of section .text.direita:
 
-00000622 <direita>:
+0000062c <direita>:
 }
 
 void direita() {
 	SerialPrintln("indo pra direit");
- 622:	6e e3       	ldi	r22, 0x3E	; 62
- 624:	71 e0       	ldi	r23, 0x01	; 1
- 626:	80 e0       	ldi	r24, 0x00	; 0
- 628:	0e 94 aa 02 	call	0x554	; 0x554 <SerialPrintln>
+ 62c:	6e e3       	ldi	r22, 0x3E	; 62
+ 62e:	71 e0       	ldi	r23, 0x01	; 1
+ 630:	80 e0       	ldi	r24, 0x00	; 0
+ 632:	0e 94 af 02 	call	0x55e	; 0x55e <SerialPrintln>
 	// Motor 1 (esquerdo) ligado pra frente
 	PORTB &= ~(1 << MOTOR1_IN1);
- 62c:	85 b1       	in	r24, 0x05	; 5
- 62e:	8f 7d       	andi	r24, 0xDF	; 223
- 630:	85 b9       	out	0x05, r24	; 5
+ 636:	85 b1       	in	r24, 0x05	; 5
+ 638:	8f 7d       	andi	r24, 0xDF	; 223
+ 63a:	85 b9       	out	0x05, r24	; 5
 	PORTB |=  (1 << MOTOR1_IN2);
- 632:	85 b1       	in	r24, 0x05	; 5
- 634:	80 61       	ori	r24, 0x10	; 16
- 636:	85 b9       	out	0x05, r24	; 5
+ 63c:	85 b1       	in	r24, 0x05	; 5
+ 63e:	80 61       	ori	r24, 0x10	; 16
+ 640:	85 b9       	out	0x05, r24	; 5
 	PORTB |=  (1 << MOTOR1_PWM);
- 638:	85 b1       	in	r24, 0x05	; 5
- 63a:	84 60       	ori	r24, 0x04	; 4
- 63c:	85 b9       	out	0x05, r24	; 5
+ 642:	85 b1       	in	r24, 0x05	; 5
+ 644:	84 60       	ori	r24, 0x04	; 4
+ 646:	85 b9       	out	0x05, r24	; 5
 
 	// Motor 2 (direito) desligado
 	PORTD &= ~(1 << MOTOR2_IN1);
- 63e:	8b b1       	in	r24, 0x0b	; 11
- 640:	8f 7d       	andi	r24, 0xDF	; 223
- 642:	8b b9       	out	0x0b, r24	; 11
+ 648:	8b b1       	in	r24, 0x0b	; 11
+ 64a:	8f 7d       	andi	r24, 0xDF	; 223
+ 64c:	8b b9       	out	0x0b, r24	; 11
 	PORTD &= ~(1 << MOTOR2_IN2);
- 644:	8b b1       	in	r24, 0x0b	; 11
- 646:	8f 7e       	andi	r24, 0xEF	; 239
- 648:	8b b9       	out	0x0b, r24	; 11
+ 64e:	8b b1       	in	r24, 0x0b	; 11
+ 650:	8f 7e       	andi	r24, 0xEF	; 239
+ 652:	8b b9       	out	0x0b, r24	; 11
 	PORTB &= ~(1 << MOTOR2_PWM);
- 64a:	85 b1       	in	r24, 0x05	; 5
- 64c:	87 7f       	andi	r24, 0xF7	; 247
- 64e:	85 b9       	out	0x05, r24	; 5
- 650:	08 95       	ret
+ 654:	85 b1       	in	r24, 0x05	; 5
+ 656:	87 7f       	andi	r24, 0xF7	; 247
+ 658:	85 b9       	out	0x05, r24	; 5
+ 65a:	08 95       	ret
 
 Disassembly of section .text.esquerda:
 
-00000652 <esquerda>:
+0000065c <esquerda>:
 }
 
 void esquerda() {
 	SerialPrintln("indo pra esquerda");
- 652:	6e e4       	ldi	r22, 0x4E	; 78
- 654:	71 e0       	ldi	r23, 0x01	; 1
- 656:	80 e0       	ldi	r24, 0x00	; 0
- 658:	0e 94 aa 02 	call	0x554	; 0x554 <SerialPrintln>
+ 65c:	6e e4       	ldi	r22, 0x4E	; 78
+ 65e:	71 e0       	ldi	r23, 0x01	; 1
+ 660:	80 e0       	ldi	r24, 0x00	; 0
+ 662:	0e 94 af 02 	call	0x55e	; 0x55e <SerialPrintln>
 	// Motor 1 (esquerdo) desligado
 	PORTB &= ~(1 << MOTOR1_IN1);
- 65c:	85 b1       	in	r24, 0x05	; 5
- 65e:	8f 7d       	andi	r24, 0xDF	; 223
- 660:	85 b9       	out	0x05, r24	; 5
+ 666:	85 b1       	in	r24, 0x05	; 5
+ 668:	8f 7d       	andi	r24, 0xDF	; 223
+ 66a:	85 b9       	out	0x05, r24	; 5
 	PORTB &= ~(1 << MOTOR1_IN2);
- 662:	85 b1       	in	r24, 0x05	; 5
- 664:	8f 7e       	andi	r24, 0xEF	; 239
- 666:	85 b9       	out	0x05, r24	; 5
+ 66c:	85 b1       	in	r24, 0x05	; 5
+ 66e:	8f 7e       	andi	r24, 0xEF	; 239
+ 670:	85 b9       	out	0x05, r24	; 5
 	PORTB &= ~(1 << MOTOR1_PWM);
- 668:	85 b1       	in	r24, 0x05	; 5
- 66a:	8b 7f       	andi	r24, 0xFB	; 251
- 66c:	85 b9       	out	0x05, r24	; 5
+ 672:	85 b1       	in	r24, 0x05	; 5
+ 674:	8b 7f       	andi	r24, 0xFB	; 251
+ 676:	85 b9       	out	0x05, r24	; 5
 
 	// Motor 2 (direito) ligado pra frente (invertido)
 	PORTD &= ~(1 << MOTOR2_IN1);
- 66e:	8b b1       	in	r24, 0x0b	; 11
- 670:	8f 7d       	andi	r24, 0xDF	; 223
- 672:	8b b9       	out	0x0b, r24	; 11
+ 678:	8b b1       	in	r24, 0x0b	; 11
+ 67a:	8f 7d       	andi	r24, 0xDF	; 223
+ 67c:	8b b9       	out	0x0b, r24	; 11
 	PORTD |=  (1 << MOTOR2_IN2);
- 674:	8b b1       	in	r24, 0x0b	; 11
- 676:	80 61       	ori	r24, 0x10	; 16
- 678:	8b b9       	out	0x0b, r24	; 11
+ 67e:	8b b1       	in	r24, 0x0b	; 11
+ 680:	80 61       	ori	r24, 0x10	; 16
+ 682:	8b b9       	out	0x0b, r24	; 11
 	PORTB |=  (1 << MOTOR2_PWM);
- 67a:	85 b1       	in	r24, 0x05	; 5
- 67c:	88 60       	ori	r24, 0x08	; 8
- 67e:	85 b9       	out	0x05, r24	; 5
- 680:	08 95       	ret
+ 684:	85 b1       	in	r24, 0x05	; 5
+ 686:	88 60       	ori	r24, 0x08	; 8
+ 688:	85 b9       	out	0x05, r24	; 5
+ 68a:	08 95       	ret
 
 Disassembly of section .text.PararMotores:
 
-00000682 <PararMotores>:
-	_delay_ms(1100);
+0000068c <PararMotores>:
+	_delay_ms(600);
 	PararMotores();
 }
 
 void PararMotores() {
 	SerialPrintln("parando");
- 682:	60 e6       	ldi	r22, 0x60	; 96
- 684:	71 e0       	ldi	r23, 0x01	; 1
- 686:	80 e0       	ldi	r24, 0x00	; 0
- 688:	0e 94 aa 02 	call	0x554	; 0x554 <SerialPrintln>
+ 68c:	60 e6       	ldi	r22, 0x60	; 96
+ 68e:	71 e0       	ldi	r23, 0x01	; 1
+ 690:	80 e0       	ldi	r24, 0x00	; 0
+ 692:	0e 94 af 02 	call	0x55e	; 0x55e <SerialPrintln>
 	// Motor 1
 	PORTB &= ~(1 << MOTOR1_IN1);
- 68c:	85 b1       	in	r24, 0x05	; 5
- 68e:	8f 7d       	andi	r24, 0xDF	; 223
- 690:	85 b9       	out	0x05, r24	; 5
+ 696:	85 b1       	in	r24, 0x05	; 5
+ 698:	8f 7d       	andi	r24, 0xDF	; 223
+ 69a:	85 b9       	out	0x05, r24	; 5
 	PORTB &= ~(1 << MOTOR1_IN2);
- 692:	85 b1       	in	r24, 0x05	; 5
- 694:	8f 7e       	andi	r24, 0xEF	; 239
- 696:	85 b9       	out	0x05, r24	; 5
+ 69c:	85 b1       	in	r24, 0x05	; 5
+ 69e:	8f 7e       	andi	r24, 0xEF	; 239
+ 6a0:	85 b9       	out	0x05, r24	; 5
 	PORTB &= ~(1 << MOTOR1_PWM);
- 698:	85 b1       	in	r24, 0x05	; 5
- 69a:	8b 7f       	andi	r24, 0xFB	; 251
- 69c:	85 b9       	out	0x05, r24	; 5
+ 6a2:	85 b1       	in	r24, 0x05	; 5
+ 6a4:	8b 7f       	andi	r24, 0xFB	; 251
+ 6a6:	85 b9       	out	0x05, r24	; 5
 
 	// Motor 2
 	PORTD &= ~(1 << MOTOR2_IN1);
- 69e:	8b b1       	in	r24, 0x0b	; 11
- 6a0:	8f 7d       	andi	r24, 0xDF	; 223
- 6a2:	8b b9       	out	0x0b, r24	; 11
+ 6a8:	8b b1       	in	r24, 0x0b	; 11
+ 6aa:	8f 7d       	andi	r24, 0xDF	; 223
+ 6ac:	8b b9       	out	0x0b, r24	; 11
 	PORTD &= ~(1 << MOTOR2_IN2);
- 6a4:	8b b1       	in	r24, 0x0b	; 11
- 6a6:	8f 7e       	andi	r24, 0xEF	; 239
- 6a8:	8b b9       	out	0x0b, r24	; 11
+ 6ae:	8b b1       	in	r24, 0x0b	; 11
+ 6b0:	8f 7e       	andi	r24, 0xEF	; 239
+ 6b2:	8b b9       	out	0x0b, r24	; 11
 	PORTB &= ~(1 << MOTOR2_PWM);
- 6aa:	85 b1       	in	r24, 0x05	; 5
- 6ac:	87 7f       	andi	r24, 0xF7	; 247
- 6ae:	85 b9       	out	0x05, r24	; 5
- 6b0:	08 95       	ret
+ 6b4:	85 b1       	in	r24, 0x05	; 5
+ 6b6:	87 7f       	andi	r24, 0xF7	; 247
+ 6b8:	85 b9       	out	0x05, r24	; 5
+ 6ba:	08 95       	ret
 
 Disassembly of section .text.Virar180:
 
-0000044a <Virar180>:
+00000454 <Virar180>:
 		buffer[i++] = c;
 	}
 
 	buffer[i] = '\0';
 	return buffer;
 }
- 44a:	68 e6       	ldi	r22, 0x68	; 104
- 44c:	71 e0       	ldi	r23, 0x01	; 1
- 44e:	80 e0       	ldi	r24, 0x00	; 0
- 450:	0e 94 aa 02 	call	0x554	; 0x554 <SerialPrintln>
- 454:	85 b1       	in	r24, 0x05	; 5
- 456:	8f 7d       	andi	r24, 0xDF	; 223
- 458:	85 b9       	out	0x05, r24	; 5
- 45a:	85 b1       	in	r24, 0x05	; 5
- 45c:	80 61       	ori	r24, 0x10	; 16
- 45e:	85 b9       	out	0x05, r24	; 5
- 460:	85 b1       	in	r24, 0x05	; 5
- 462:	84 60       	ori	r24, 0x04	; 4
- 464:	85 b9       	out	0x05, r24	; 5
- 466:	8b b1       	in	r24, 0x0b	; 11
- 468:	80 62       	ori	r24, 0x20	; 32
- 46a:	8b b9       	out	0x0b, r24	; 11
- 46c:	8b b1       	in	r24, 0x0b	; 11
- 46e:	8f 7e       	andi	r24, 0xEF	; 239
- 470:	8b b9       	out	0x0b, r24	; 11
- 472:	85 b1       	in	r24, 0x05	; 5
- 474:	88 60       	ori	r24, 0x08	; 8
- 476:	85 b9       	out	0x05, r24	; 5
- 478:	2f ef       	ldi	r18, 0xFF	; 255
- 47a:	85 eb       	ldi	r24, 0xB5	; 181
- 47c:	95 e3       	ldi	r25, 0x35	; 53
- 47e:	21 50       	subi	r18, 0x01	; 1
- 480:	80 40       	sbci	r24, 0x00	; 0
- 482:	90 40       	sbci	r25, 0x00	; 0
- 484:	e1 f7       	brne	.-8      	; 0x47e <Virar180+0x34>
- 486:	00 c0       	rjmp	.+0      	; 0x488 <Virar180+0x3e>
- 488:	00 00       	nop
- 48a:	0e 94 41 03 	call	0x682	; 0x682 <PararMotores>
- 48e:	08 95       	ret
+ 454:	68 e6       	ldi	r22, 0x68	; 104
+ 456:	71 e0       	ldi	r23, 0x01	; 1
+ 458:	80 e0       	ldi	r24, 0x00	; 0
+ 45a:	0e 94 af 02 	call	0x55e	; 0x55e <SerialPrintln>
+ 45e:	85 b1       	in	r24, 0x05	; 5
+ 460:	8f 7d       	andi	r24, 0xDF	; 223
+ 462:	85 b9       	out	0x05, r24	; 5
+ 464:	85 b1       	in	r24, 0x05	; 5
+ 466:	80 61       	ori	r24, 0x10	; 16
+ 468:	85 b9       	out	0x05, r24	; 5
+ 46a:	85 b1       	in	r24, 0x05	; 5
+ 46c:	84 60       	ori	r24, 0x04	; 4
+ 46e:	85 b9       	out	0x05, r24	; 5
+ 470:	8b b1       	in	r24, 0x0b	; 11
+ 472:	80 62       	ori	r24, 0x20	; 32
+ 474:	8b b9       	out	0x0b, r24	; 11
+ 476:	8b b1       	in	r24, 0x0b	; 11
+ 478:	8f 7e       	andi	r24, 0xEF	; 239
+ 47a:	8b b9       	out	0x0b, r24	; 11
+ 47c:	85 b1       	in	r24, 0x05	; 5
+ 47e:	88 60       	ori	r24, 0x08	; 8
+ 480:	85 b9       	out	0x05, r24	; 5
+ 482:	2f ef       	ldi	r18, 0xFF	; 255
+ 484:	8b e4       	ldi	r24, 0x4B	; 75
+ 486:	9d e1       	ldi	r25, 0x1D	; 29
+ 488:	21 50       	subi	r18, 0x01	; 1
+ 48a:	80 40       	sbci	r24, 0x00	; 0
+ 48c:	90 40       	sbci	r25, 0x00	; 0
+ 48e:	e1 f7       	brne	.-8      	; 0x488 <Virar180+0x34>
+ 490:	00 c0       	rjmp	.+0      	; 0x492 <Virar180+0x3e>
+ 492:	00 00       	nop
+ 494:	0e 94 46 03 	call	0x68c	; 0x68c <PararMotores>
+ 498:	08 95       	ret
 
 Disassembly of section .text.LifePwmSetup:
 
-0000078e <LifePwmSetup>:
+00000782 <LifePwmSetup>:
 	PORTB &= ~(1 << MOTOR2_PWM);
 }
 
 
 void LifePwmSetup(){
 	TCCR0A = (1 << COM0A1) | (1 << WGM01) | (1 << WGM00);
- 78e:	83 e8       	ldi	r24, 0x83	; 131
- 790:	84 bd       	out	0x24, r24	; 36
+ 782:	83 e8       	ldi	r24, 0x83	; 131
+ 784:	84 bd       	out	0x24, r24	; 36
 	TCCR0B = (1 << CS00);  
- 792:	81 e0       	ldi	r24, 0x01	; 1
- 794:	85 bd       	out	0x25, r24	; 37
+ 786:	81 e0       	ldi	r24, 0x01	; 1
+ 788:	85 bd       	out	0x25, r24	; 37
 	OCR0A = 0; 	
- 796:	17 bc       	out	0x27, r1	; 39
- 798:	08 95       	ret
+ 78a:	17 bc       	out	0x27, r1	; 39
+ 78c:	08 95       	ret
 
 Disassembly of section .text.ResetLifes:
 
-00000760 <ResetLifes>:
+00000754 <ResetLifes>:
 }
 
 void ResetLifes(){
 	CurLifes = MAX_LIFES;
- 760:	83 e0       	ldi	r24, 0x03	; 3
- 762:	90 e0       	ldi	r25, 0x00	; 0
- 764:	90 93 05 01 	sts	0x0105, r25	; 0x800105 <CurLifes+0x1>
- 768:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <CurLifes>
+ 754:	83 e0       	ldi	r24, 0x03	; 3
+ 756:	90 e0       	ldi	r25, 0x00	; 0
+ 758:	90 93 05 01 	sts	0x0105, r25	; 0x800105 <CurLifes+0x1>
+ 75c:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <CurLifes>
 	LedHandler();
- 76c:	0e 94 02 02 	call	0x404	; 0x404 <LedHandler>
- 770:	08 95       	ret
+ 760:	0e 94 07 02 	call	0x40e	; 0x40e <LedHandler>
+ 764:	08 95       	ret
 
 Disassembly of section .text.SetupAdc:
 
-00000780 <SetupAdc>:
+00000774 <SetupAdc>:
 }
 
 void SetupAdc() {
 	ADMUX = (1 << REFS0);
- 780:	80 e4       	ldi	r24, 0x40	; 64
- 782:	80 93 7c 00 	sts	0x007C, r24	; 0x80007c <__TEXT_REGION_LENGTH__+0x7f807c>
+ 774:	80 e4       	ldi	r24, 0x40	; 64
+ 776:	80 93 7c 00 	sts	0x007C, r24	; 0x80007c <__TEXT_REGION_LENGTH__+0x7f807c>
 	ADCSRA = (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0);
- 786:	87 e8       	ldi	r24, 0x87	; 135
- 788:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x7f807a>
- 78c:	08 95       	ret
+ 77a:	87 e8       	ldi	r24, 0x87	; 135
+ 77c:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x7f807a>
+ 780:	08 95       	ret
 
 Disassembly of section .text.ReadLdr:
 
-000006dc <ReadLdr>:
+000006e6 <ReadLdr>:
 }
 
 uint16_t ReadLdr() {
 	ADMUX = (ADMUX & 0xF0) | 1;  
- 6dc:	ec e7       	ldi	r30, 0x7C	; 124
- 6de:	f0 e0       	ldi	r31, 0x00	; 0
- 6e0:	80 81       	ld	r24, Z
- 6e2:	80 7f       	andi	r24, 0xF0	; 240
- 6e4:	81 60       	ori	r24, 0x01	; 1
- 6e6:	80 83       	st	Z, r24
-	ADCSRA |= (1 << ADSC);
- 6e8:	ea e7       	ldi	r30, 0x7A	; 122
- 6ea:	f0 e0       	ldi	r31, 0x00	; 0
- 6ec:	80 81       	ld	r24, Z
- 6ee:	80 64       	ori	r24, 0x40	; 64
+ 6e6:	ec e7       	ldi	r30, 0x7C	; 124
+ 6e8:	f0 e0       	ldi	r31, 0x00	; 0
+ 6ea:	80 81       	ld	r24, Z
+ 6ec:	80 7f       	andi	r24, 0xF0	; 240
+ 6ee:	81 60       	ori	r24, 0x01	; 1
  6f0:	80 83       	st	Z, r24
+	ADCSRA |= (1 << ADSC);
+ 6f2:	ea e7       	ldi	r30, 0x7A	; 122
+ 6f4:	f0 e0       	ldi	r31, 0x00	; 0
+ 6f6:	80 81       	ld	r24, Z
+ 6f8:	80 64       	ori	r24, 0x40	; 64
+ 6fa:	80 83       	st	Z, r24
 	while (ADCSRA & (1 << ADSC));
- 6f2:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <__TEXT_REGION_LENGTH__+0x7f807a>
- 6f6:	86 fd       	sbrc	r24, 6
- 6f8:	fc cf       	rjmp	.-8      	; 0x6f2 <ReadLdr+0x16>
+ 6fc:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <__TEXT_REGION_LENGTH__+0x7f807a>
+ 700:	86 fd       	sbrc	r24, 6
+ 702:	fc cf       	rjmp	.-8      	; 0x6fc <ReadLdr+0x16>
 	return ADC;
- 6fa:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <__TEXT_REGION_LENGTH__+0x7f8078>
- 6fe:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7f8079>
+ 704:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <__TEXT_REGION_LENGTH__+0x7f8078>
+ 708:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7f8079>
 }
- 702:	08 95       	ret
+ 70c:	08 95       	ret
 
 Disassembly of section .text.setup:
 
-00000516 <setup>:
+00000520 <setup>:
 		buffer[i++] = c;
 	}
 
 	buffer[i] = '\0';
 	return buffer;
 }
- 516:	f8 94       	cli
- 518:	60 e8       	ldi	r22, 0x80	; 128
- 51a:	75 e2       	ldi	r23, 0x25	; 37
- 51c:	80 e0       	ldi	r24, 0x00	; 0
- 51e:	90 e0       	ldi	r25, 0x00	; 0
- 520:	0e 94 64 01 	call	0x2c8	; 0x2c8 <SerialBegin>
- 524:	64 e7       	ldi	r22, 0x74	; 116
- 526:	71 e0       	ldi	r23, 0x01	; 1
- 528:	80 e0       	ldi	r24, 0x00	; 0
- 52a:	0e 94 aa 02 	call	0x554	; 0x554 <SerialPrintln>
- 52e:	0e 94 c6 02 	call	0x58c	; 0x58c <BT_init>
- 532:	6e e7       	ldi	r22, 0x7E	; 126
- 534:	71 e0       	ldi	r23, 0x01	; 1
- 536:	80 e0       	ldi	r24, 0x00	; 0
- 538:	0e 94 aa 02 	call	0x554	; 0x554 <SerialPrintln>
- 53c:	0e 94 82 03 	call	0x704	; 0x704 <SetupPins>
- 540:	0e 94 59 03 	call	0x6b2	; 0x6b2 <LaserTimerSetup>
- 544:	0e 94 c7 03 	call	0x78e	; 0x78e <LifePwmSetup>
- 548:	0e 94 c0 03 	call	0x780	; 0x780 <SetupAdc>
- 54c:	0e 94 02 02 	call	0x404	; 0x404 <LedHandler>
- 550:	78 94       	sei
- 552:	08 95       	ret
+ 520:	f8 94       	cli
+ 522:	60 e8       	ldi	r22, 0x80	; 128
+ 524:	75 e2       	ldi	r23, 0x25	; 37
+ 526:	80 e0       	ldi	r24, 0x00	; 0
+ 528:	90 e0       	ldi	r25, 0x00	; 0
+ 52a:	0e 94 69 01 	call	0x2d2	; 0x2d2 <SerialBegin>
+ 52e:	64 e7       	ldi	r22, 0x74	; 116
+ 530:	71 e0       	ldi	r23, 0x01	; 1
+ 532:	80 e0       	ldi	r24, 0x00	; 0
+ 534:	0e 94 af 02 	call	0x55e	; 0x55e <SerialPrintln>
+ 538:	0e 94 cb 02 	call	0x596	; 0x596 <BT_init>
+ 53c:	6e e7       	ldi	r22, 0x7E	; 126
+ 53e:	71 e0       	ldi	r23, 0x01	; 1
+ 540:	80 e0       	ldi	r24, 0x00	; 0
+ 542:	0e 94 af 02 	call	0x55e	; 0x55e <SerialPrintln>
+ 546:	0e 94 87 03 	call	0x70e	; 0x70e <SetupPins>
+ 54a:	0e 94 5e 03 	call	0x6bc	; 0x6bc <LaserTimerSetup>
+ 54e:	0e 94 c1 03 	call	0x782	; 0x782 <LifePwmSetup>
+ 552:	0e 94 ba 03 	call	0x774	; 0x774 <SetupAdc>
+ 556:	0e 94 07 02 	call	0x40e	; 0x40e <LedHandler>
+ 55a:	78 94       	sei
+ 55c:	08 95       	ret
 
 Disassembly of section .text.TakeDamage:
 
-000004d4 <TakeDamage>:
- 4d4:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <CurLifes>
- 4d8:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <CurLifes+0x1>
- 4dc:	01 97       	sbiw	r24, 0x01	; 1
- 4de:	90 93 05 01 	sts	0x0105, r25	; 0x800105 <CurLifes+0x1>
- 4e2:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <CurLifes>
- 4e6:	0e 94 02 02 	call	0x404	; 0x404 <LedHandler>
- 4ea:	81 e0       	ldi	r24, 0x01	; 1
- 4ec:	90 e0       	ldi	r25, 0x00	; 0
- 4ee:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
- 4f2:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
- 4f6:	0e 94 25 02 	call	0x44a	; 0x44a <Virar180>
- 4fa:	2f ef       	ldi	r18, 0xFF	; 255
- 4fc:	83 e2       	ldi	r24, 0x23	; 35
- 4fe:	94 ef       	ldi	r25, 0xF4	; 244
- 500:	21 50       	subi	r18, 0x01	; 1
- 502:	80 40       	sbci	r24, 0x00	; 0
- 504:	90 40       	sbci	r25, 0x00	; 0
- 506:	e1 f7       	brne	.-8      	; 0x500 <TakeDamage+0x2c>
- 508:	00 c0       	rjmp	.+0      	; 0x50a <TakeDamage+0x36>
- 50a:	00 00       	nop
- 50c:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
- 510:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
- 514:	08 95       	ret
+000004de <TakeDamage>:
+ 4de:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <CurLifes>
+ 4e2:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <CurLifes+0x1>
+ 4e6:	01 97       	sbiw	r24, 0x01	; 1
+ 4e8:	90 93 05 01 	sts	0x0105, r25	; 0x800105 <CurLifes+0x1>
+ 4ec:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <CurLifes>
+ 4f0:	0e 94 07 02 	call	0x40e	; 0x40e <LedHandler>
+ 4f4:	81 e0       	ldi	r24, 0x01	; 1
+ 4f6:	90 e0       	ldi	r25, 0x00	; 0
+ 4f8:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 4fc:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 500:	0e 94 2a 02 	call	0x454	; 0x454 <Virar180>
+ 504:	2f ef       	ldi	r18, 0xFF	; 255
+ 506:	83 e2       	ldi	r24, 0x23	; 35
+ 508:	94 ef       	ldi	r25, 0xF4	; 244
+ 50a:	21 50       	subi	r18, 0x01	; 1
+ 50c:	80 40       	sbci	r24, 0x00	; 0
+ 50e:	90 40       	sbci	r25, 0x00	; 0
+ 510:	e1 f7       	brne	.-8      	; 0x50a <TakeDamage+0x2c>
+ 512:	00 c0       	rjmp	.+0      	; 0x514 <TakeDamage+0x36>
+ 514:	00 00       	nop
+ 516:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 51a:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 51e:	08 95       	ret
 
 Disassembly of section .text.loop:
 
@@ -1131,166 +1119,140 @@ Disassembly of section .text.loop:
  1a0:	df 92       	push	r13
  1a2:	ef 92       	push	r14
  1a4:	ff 92       	push	r15
- 1a6:	0e 94 95 03 	call	0x72a	; 0x72a <BT_readFiltered>
- 1aa:	c8 2e       	mov	r12, r24
- 1ac:	0e 94 6e 03 	call	0x6dc	; 0x6dc <ReadLdr>
- 1b0:	8d 3b       	cpi	r24, 0xBD	; 189
- 1b2:	92 40       	sbci	r25, 0x02	; 2
- 1b4:	84 f0       	brlt	.+32     	; 0x1d6 <loop+0x38>
- 1b6:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
- 1ba:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
- 1be:	89 2b       	or	r24, r25
- 1c0:	51 f4       	brne	.+20     	; 0x1d6 <loop+0x38>
- 1c2:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <CurLifes>
- 1c6:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <CurLifes+0x1>
- 1ca:	18 16       	cp	r1, r24
- 1cc:	19 06       	cpc	r1, r25
- 1ce:	1c f4       	brge	.+6      	; 0x1d6 <loop+0x38>
- 1d0:	0e 94 6a 02 	call	0x4d4	; 0x4d4 <TakeDamage>
- 1d4:	39 c0       	rjmp	.+114    	; 0x248 <loop+0xaa>
- 1d6:	cc 20       	and	r12, r12
- 1d8:	b9 f1       	breq	.+110    	; 0x248 <loop+0xaa>
- 1da:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
- 1de:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
- 1e2:	89 2b       	or	r24, r25
- 1e4:	89 f5       	brne	.+98     	; 0x248 <loop+0xaa>
- 1e6:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <CurLifes>
- 1ea:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <CurLifes+0x1>
- 1ee:	18 16       	cp	r1, r24
- 1f0:	19 06       	cpc	r1, r25
- 1f2:	54 f5       	brge	.+84     	; 0x248 <loop+0xaa>
- 1f4:	61 e9       	ldi	r22, 0x91	; 145
- 1f6:	71 e0       	ldi	r23, 0x01	; 1
- 1f8:	80 e0       	ldi	r24, 0x00	; 0
- 1fa:	0e 94 aa 02 	call	0x554	; 0x554 <SerialPrintln>
- 1fe:	d1 2c       	mov	r13, r1
- 200:	e1 2c       	mov	r14, r1
- 202:	f1 2c       	mov	r15, r1
- 204:	8e 2d       	mov	r24, r14
- 206:	b6 01       	movw	r22, r12
- 208:	0e 94 aa 02 	call	0x554	; 0x554 <SerialPrintln>
- 20c:	f6 01       	movw	r30, r12
- 20e:	e2 54       	subi	r30, 0x42	; 66
- 210:	f1 09       	sbc	r31, r1
- 212:	e9 32       	cpi	r30, 0x29	; 41
- 214:	f1 05       	cpc	r31, r1
- 216:	c0 f4       	brcc	.+48     	; 0x248 <loop+0xaa>
- 218:	ec 5c       	subi	r30, 0xCC	; 204
- 21a:	ff 4f       	sbci	r31, 0xFF	; 255
- 21c:	0c 94 cd 03 	jmp	0x79a	; 0x79a <__tablejump2__>
- 220:	0e 94 e1 02 	call	0x5c2	; 0x5c2 <frente>
- 224:	11 c0       	rjmp	.+34     	; 0x248 <loop+0xaa>
- 226:	0e 94 f9 02 	call	0x5f2	; 0x5f2 <tras>
- 22a:	0e c0       	rjmp	.+28     	; 0x248 <loop+0xaa>
- 22c:	0e 94 29 03 	call	0x652	; 0x652 <esquerda>
- 230:	0b c0       	rjmp	.+22     	; 0x248 <loop+0xaa>
- 232:	0e 94 11 03 	call	0x622	; 0x622 <direita>
- 236:	08 c0       	rjmp	.+16     	; 0x248 <loop+0xaa>
- 238:	0e 94 41 03 	call	0x682	; 0x682 <PararMotores>
- 23c:	05 c0       	rjmp	.+10     	; 0x248 <loop+0xaa>
- 23e:	0e 94 b0 03 	call	0x760	; 0x760 <ResetLifes>
- 242:	02 c0       	rjmp	.+4      	; 0x248 <loop+0xaa>
- 244:	0e 94 25 02 	call	0x44a	; 0x44a <Virar180>
- 248:	ff 90       	pop	r15
- 24a:	ef 90       	pop	r14
- 24c:	df 90       	pop	r13
- 24e:	cf 90       	pop	r12
- 250:	08 95       	ret
+ 1a6:	cf 93       	push	r28
+ 1a8:	0e 94 9a 03 	call	0x734	; 0x734 <BT_readFiltered>
+ 1ac:	c8 2f       	mov	r28, r24
+ 1ae:	0e 94 73 03 	call	0x6e6	; 0x6e6 <ReadLdr>
+ 1b2:	81 32       	cpi	r24, 0x21	; 33
+ 1b4:	93 40       	sbci	r25, 0x03	; 3
+ 1b6:	84 f0       	brlt	.+32     	; 0x1d8 <loop+0x3a>
+ 1b8:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1bc:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 1c0:	89 2b       	or	r24, r25
+ 1c2:	51 f4       	brne	.+20     	; 0x1d8 <loop+0x3a>
+ 1c4:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <CurLifes>
+ 1c8:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <CurLifes+0x1>
+ 1cc:	18 16       	cp	r1, r24
+ 1ce:	19 06       	cpc	r1, r25
+ 1d0:	1c f4       	brge	.+6      	; 0x1d8 <loop+0x3a>
+ 1d2:	0e 94 6f 02 	call	0x4de	; 0x4de <TakeDamage>
+ 1d6:	3c c0       	rjmp	.+120    	; 0x250 <loop+0xb2>
+ 1d8:	c9 35       	cpi	r28, 0x59	; 89
+ 1da:	19 f4       	brne	.+6      	; 0x1e2 <loop+0x44>
+ 1dc:	0e 94 aa 03 	call	0x754	; 0x754 <ResetLifes>
+ 1e0:	37 c0       	rjmp	.+110    	; 0x250 <loop+0xb2>
+ 1e2:	cc 23       	and	r28, r28
+ 1e4:	a9 f1       	breq	.+106    	; 0x250 <loop+0xb2>
+ 1e6:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1ea:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 1ee:	89 2b       	or	r24, r25
+ 1f0:	79 f5       	brne	.+94     	; 0x250 <loop+0xb2>
+ 1f2:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <CurLifes>
+ 1f6:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <CurLifes+0x1>
+ 1fa:	18 16       	cp	r1, r24
+ 1fc:	19 06       	cpc	r1, r25
+ 1fe:	44 f5       	brge	.+80     	; 0x250 <loop+0xb2>
+ 200:	61 e9       	ldi	r22, 0x91	; 145
+ 202:	71 e0       	ldi	r23, 0x01	; 1
+ 204:	80 e0       	ldi	r24, 0x00	; 0
+ 206:	0e 94 af 02 	call	0x55e	; 0x55e <SerialPrintln>
+ 20a:	cc 2e       	mov	r12, r28
+ 20c:	d1 2c       	mov	r13, r1
+ 20e:	e1 2c       	mov	r14, r1
+ 210:	f1 2c       	mov	r15, r1
+ 212:	8e 2d       	mov	r24, r14
+ 214:	b6 01       	movw	r22, r12
+ 216:	0e 94 af 02 	call	0x55e	; 0x55e <SerialPrintln>
+ 21a:	f6 01       	movw	r30, r12
+ 21c:	e2 54       	subi	r30, 0x42	; 66
+ 21e:	f1 09       	sbc	r31, r1
+ 220:	e9 32       	cpi	r30, 0x29	; 41
+ 222:	f1 05       	cpc	r31, r1
+ 224:	a8 f4       	brcc	.+42     	; 0x250 <loop+0xb2>
+ 226:	ec 5c       	subi	r30, 0xCC	; 204
+ 228:	ff 4f       	sbci	r31, 0xFF	; 255
+ 22a:	0c 94 c7 03 	jmp	0x78e	; 0x78e <__tablejump2__>
+ 22e:	0e 94 e6 02 	call	0x5cc	; 0x5cc <frente>
+ 232:	0e c0       	rjmp	.+28     	; 0x250 <loop+0xb2>
+ 234:	0e 94 fe 02 	call	0x5fc	; 0x5fc <tras>
+ 238:	0b c0       	rjmp	.+22     	; 0x250 <loop+0xb2>
+ 23a:	0e 94 2e 03 	call	0x65c	; 0x65c <esquerda>
+ 23e:	08 c0       	rjmp	.+16     	; 0x250 <loop+0xb2>
+ 240:	0e 94 16 03 	call	0x62c	; 0x62c <direita>
+ 244:	05 c0       	rjmp	.+10     	; 0x250 <loop+0xb2>
+ 246:	0e 94 46 03 	call	0x68c	; 0x68c <PararMotores>
+ 24a:	02 c0       	rjmp	.+4      	; 0x250 <loop+0xb2>
+ 24c:	0e 94 2a 02 	call	0x454	; 0x454 <Virar180>
+ 250:	cf 91       	pop	r28
+ 252:	ff 90       	pop	r15
+ 254:	ef 90       	pop	r14
+ 256:	df 90       	pop	r13
+ 258:	cf 90       	pop	r12
+ 25a:	08 95       	ret
 
 Disassembly of section .text.main:
 
-000007b0 <main>:
+000007a4 <main>:
 	//}
 }
 
 
 int main(void) {
 	setup();
- 7b0:	0e 94 8b 02 	call	0x516	; 0x516 <setup>
+ 7a4:	0e 94 90 02 	call	0x520	; 0x520 <setup>
 	while (1) {
 		loop();
- 7b4:	0e 94 cf 00 	call	0x19e	; 0x19e <loop>
- 7b8:	fd cf       	rjmp	.-6      	; 0x7b4 <main+0x4>
+ 7a8:	0e 94 cf 00 	call	0x19e	; 0x19e <loop>
+ 7ac:	fd cf       	rjmp	.-6      	; 0x7a8 <main+0x4>
 
 Disassembly of section .text.libgcc.div:
 
-00000490 <__udivmodsi4>:
- 490:	a1 e2       	ldi	r26, 0x21	; 33
- 492:	1a 2e       	mov	r1, r26
- 494:	aa 1b       	sub	r26, r26
- 496:	bb 1b       	sub	r27, r27
- 498:	fd 01       	movw	r30, r26
- 49a:	0d c0       	rjmp	.+26     	; 0x4b6 <__udivmodsi4_ep>
+0000049a <__udivmodsi4>:
+ 49a:	a1 e2       	ldi	r26, 0x21	; 33
+ 49c:	1a 2e       	mov	r1, r26
+ 49e:	aa 1b       	sub	r26, r26
+ 4a0:	bb 1b       	sub	r27, r27
+ 4a2:	fd 01       	movw	r30, r26
+ 4a4:	0d c0       	rjmp	.+26     	; 0x4c0 <__udivmodsi4_ep>
 
-0000049c <__udivmodsi4_loop>:
- 49c:	aa 1f       	adc	r26, r26
- 49e:	bb 1f       	adc	r27, r27
- 4a0:	ee 1f       	adc	r30, r30
- 4a2:	ff 1f       	adc	r31, r31
- 4a4:	a2 17       	cp	r26, r18
- 4a6:	b3 07       	cpc	r27, r19
- 4a8:	e4 07       	cpc	r30, r20
- 4aa:	f5 07       	cpc	r31, r21
- 4ac:	20 f0       	brcs	.+8      	; 0x4b6 <__udivmodsi4_ep>
- 4ae:	a2 1b       	sub	r26, r18
- 4b0:	b3 0b       	sbc	r27, r19
- 4b2:	e4 0b       	sbc	r30, r20
- 4b4:	f5 0b       	sbc	r31, r21
+000004a6 <__udivmodsi4_loop>:
+ 4a6:	aa 1f       	adc	r26, r26
+ 4a8:	bb 1f       	adc	r27, r27
+ 4aa:	ee 1f       	adc	r30, r30
+ 4ac:	ff 1f       	adc	r31, r31
+ 4ae:	a2 17       	cp	r26, r18
+ 4b0:	b3 07       	cpc	r27, r19
+ 4b2:	e4 07       	cpc	r30, r20
+ 4b4:	f5 07       	cpc	r31, r21
+ 4b6:	20 f0       	brcs	.+8      	; 0x4c0 <__udivmodsi4_ep>
+ 4b8:	a2 1b       	sub	r26, r18
+ 4ba:	b3 0b       	sbc	r27, r19
+ 4bc:	e4 0b       	sbc	r30, r20
+ 4be:	f5 0b       	sbc	r31, r21
 
-000004b6 <__udivmodsi4_ep>:
- 4b6:	66 1f       	adc	r22, r22
- 4b8:	77 1f       	adc	r23, r23
- 4ba:	88 1f       	adc	r24, r24
- 4bc:	99 1f       	adc	r25, r25
- 4be:	1a 94       	dec	r1
- 4c0:	69 f7       	brne	.-38     	; 0x49c <__udivmodsi4_loop>
- 4c2:	60 95       	com	r22
- 4c4:	70 95       	com	r23
- 4c6:	80 95       	com	r24
- 4c8:	90 95       	com	r25
- 4ca:	9b 01       	movw	r18, r22
- 4cc:	ac 01       	movw	r20, r24
- 4ce:	bd 01       	movw	r22, r26
- 4d0:	cf 01       	movw	r24, r30
- 4d2:	08 95       	ret
+000004c0 <__udivmodsi4_ep>:
+ 4c0:	66 1f       	adc	r22, r22
+ 4c2:	77 1f       	adc	r23, r23
+ 4c4:	88 1f       	adc	r24, r24
+ 4c6:	99 1f       	adc	r25, r25
+ 4c8:	1a 94       	dec	r1
+ 4ca:	69 f7       	brne	.-38     	; 0x4a6 <__udivmodsi4_loop>
+ 4cc:	60 95       	com	r22
+ 4ce:	70 95       	com	r23
+ 4d0:	80 95       	com	r24
+ 4d2:	90 95       	com	r25
+ 4d4:	9b 01       	movw	r18, r22
+ 4d6:	ac 01       	movw	r20, r24
+ 4d8:	bd 01       	movw	r22, r26
+ 4da:	cf 01       	movw	r24, r30
+ 4dc:	08 95       	ret
 
 Disassembly of section .text.libgcc:
 
-0000079a <__tablejump2__>:
- 79a:	ee 0f       	add	r30, r30
- 79c:	ff 1f       	adc	r31, r31
- 79e:	05 90       	lpm	r0, Z+
- 7a0:	f4 91       	lpm	r31, Z
- 7a2:	e0 2d       	mov	r30, r0
- 7a4:	09 94       	ijmp
-
-Disassembly of section .text.__dummy_fini:
-
-000007c8 <_fini>:
- 7c8:	08 95       	ret
-
-Disassembly of section .text.__dummy_funcs_on_exit:
-
-000007ca <__funcs_on_exit>:
- 7ca:	08 95       	ret
-
-Disassembly of section .text.__dummy_simulator_exit:
-
-000007cc <__simulator_exit>:
- 7cc:	08 95       	ret
-
-Disassembly of section .text.exit:
-
-0000074a <exit>:
- 74a:	ec 01       	movw	r28, r24
- 74c:	0e 94 e5 03 	call	0x7ca	; 0x7ca <__funcs_on_exit>
- 750:	0e 94 e4 03 	call	0x7c8	; 0x7c8 <_fini>
- 754:	ce 01       	movw	r24, r28
- 756:	0e 94 e6 03 	call	0x7cc	; 0x7cc <__simulator_exit>
- 75a:	ce 01       	movw	r24, r28
- 75c:	0e 94 e2 03 	call	0x7c4	; 0x7c4 <_Exit>
-
-Disassembly of section .text._Exit:
-
-000007c4 <_Exit>:
- 7c4:	0e 94 8e 00 	call	0x11c	; 0x11c <_exit>
+0000078e <__tablejump2__>:
+ 78e:	ee 0f       	add	r30, r30
+ 790:	ff 1f       	adc	r31, r31
+ 792:	05 90       	lpm	r0, Z+
+ 794:	f4 91       	lpm	r31, Z
+ 796:	e0 2d       	mov	r30, r0
+ 798:	09 94       	ijmp

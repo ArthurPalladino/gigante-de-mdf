@@ -87,7 +87,7 @@ volatile uint8_t bt_syncPhase = 0;
 
 //Variaveis de codigo
 #define MAX_LIFES 3
-#define LDR_THRESHOLD 700
+#define LDR_THRESHOLD 800
 
 int CurLifes = MAX_LIFES;
 int LaserOn = 0;
@@ -334,7 +334,7 @@ void Virar180() {
 	PORTD &= ~(1 << MOTOR2_IN2);   // LOW
 	PORTB |=  (1 << MOTOR2_PWM);   // LIGA
 	
-	_delay_ms(1100);
+	_delay_ms(600);
 	PararMotores();
 }
 
@@ -406,15 +406,15 @@ void loop() {
 	//int i = 0;
 	//int temp = ldrValue;
 	//do {
-		//buffer[i++] = (temp % 10) + '0';
-		//temp /= 10;
+	//buffer[i++] = (temp % 10) + '0';
+	//temp /= 10;
 	//} while (temp > 0);
-//
+	//
 	//buffer[i] = '\0';
 	//for(int j=0; j<i/2; j++){
-		//char t = buffer[j];
-		//buffer[j] = buffer[i-1-j];
-		//buffer[i-1-j] = t;
+	//char t = buffer[j];
+	//buffer[j] = buffer[i-1-j];
+	//buffer[i-1-j] = t;
 	//}
 	//SerialPrintln(buffer);
 	char btChar = BT_readFiltered();
@@ -423,7 +423,10 @@ void loop() {
 		TakeDamage();
 		return;
 	}
-	
+	if (btChar == 'Y'){
+		ResetLifes();
+		return;
+	}
 	if (btChar && !takenDamage && CurLifes>0) {
 		SerialPrintln("BT recebeu:");
 		SerialPrintln(btChar);
@@ -433,7 +436,6 @@ void loop() {
 			case 'R': esquerda(); break;
 			case 'L': direita(); break;
 			case 'S': PararMotores(); break;
-			case 'Y': ResetLifes(); break;
 			case 'H':
 			case 'h':
 			case 'J':
@@ -441,7 +443,7 @@ void loop() {
 			Virar180();
 			break;
 		}
-		}
+	}
 	//}
 }
 
