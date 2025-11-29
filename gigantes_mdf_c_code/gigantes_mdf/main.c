@@ -18,48 +18,40 @@ usando pinos digitais comuns e temporizadores,
 sem depender das bibliotecas prontas da Arduino IDE.
 */
 
-// ------------------------------------------------------------
-// TODO LIST - Projeto Gigantes de MDF
-// ------------------------------------------------------------
+/*
+    TO-DO LIST GIGANTE DE MDF SUPER MANEIRO IRADO
 
-// ===== HARDWARE E SETUP =====
-// [OK] Definir todos os pinos (motor, LDR, LED RGB, laser, BT)
-// [OK] Configurar timers para o laser piscar a cada 1 segundo
+    Laser:
+    - [OK] Toggle do laser usando timer (1 Hz)
 
-// ===== LASER =====
-// [OK] Implementar toggle do laser usando timer (pisca 1 Hz)
+    LDR e Dano:
+    - [OK] Leitura contínua do LDR
+    - [OK] Detecção de dano (threshold)
+    - [OK] Ao tomar dano: parar o carrinho
+    - [OK] Girar 180°
+    - [OK] Aguardar 5 segundos antes de voltar ao normal
 
-// ===== LDR E DANO =====
-// [OK] Ler o LDR continuamente
-// [OK] Criar detecção de "dano" (threshold)
-// [ ] Ao tomar dano: parar carrinho
-// [ ] Girar o carrinho 180 graus
-// [ ] Aguardar 5 segundos antes de voltar ao normal
+    Sistema de Vidas:
+    - [OK] Variável de vidas
+    - [OK] RGB: verde (3 vidas), amarelo (2), vermelho (1), desligado (0)
+    - [OK] Reduzir vida ao tomar dano
+    - [OK] Travar carrinho ao sofrer dano
 
-// ===== SISTEMA DE VIDAS =====
-// [OK Criar variável de vidas
-// [OK] LED RGB verde para 3 vidas
-// [OK] LED RGB amarelo para 2 vidas
-// [OK] LED RGB vermelho para 1 vida
-// [OK] LED RGB desligado para 0 vidas
-// [ ] Reduzir vida ao tomar dano
-// [ ] Travar o carrinho sempre que tomar dano
+    Controle Bluetooth:
+    - [OK] UART por software (RX/TX digitais)
+    - [OK] Função de leitura UART
+    - [OK] Mapeamento dos comandos (frente, trás, esquerda, direita, parar)
+    - [OK] Integração dos comandos BT com os motores
 
-// ===== CONTROLE BLUETOOTH =====
-// [OK] Implementar UART por software (RX/TX em pinos digitais)
-// [OK] Criar função de leitura UART por software
-// [ ] Mapear comandos do controle (frente, trás, esquerda, direita, parar)
-// [ ] Integrar comandos BT ao controle do motor
+    Movimentação:
+    - [OK] Controle dos motores
+    - [OK] Função girar 180°
+    - [OK] Garantir giro independente da direção atual
 
-// ===== MOVIMENTAÇÃO =====
-// [ ] Controlar motores conforme comandos do BT
-// [ ] Implementar função girar 180°
-// [ ] Garantir que o giro 180° funcione independente da direção atual
+    Finalização:
+    - [OK] Teste final
+*/
 
-// ===== ESTRUTURA GERAL =====
-// [ ] Criar máquina de estados (normal, tomouDano, morto)
-// [ ] Teste final de integração geral
-// ------------------------------------------------------------
 
 //RESOLVER SITUACAO DO SOFTWARE SERIAL
 #define BT_RX_PIN  PB1
@@ -94,12 +86,12 @@ volatile uint8_t bt_hasByte = 0;
 volatile uint8_t bt_syncPhase = 0;
 
 //Variaveis de codigo
-#define MAX_LIFES 3;
-#define LDR_THRESHOLD 700;
+#define MAX_LIFES 3
+#define LDR_THRESHOLD 700
 
 int CurLifes = MAX_LIFES;
 int LaserOn = 0;
-
+int takenDamage = 0;
 
 void SerialBegin(unsigned long baud) {
 	unsigned long ubrr = (F_CPU / (16UL * baud)) - 1;
@@ -232,7 +224,7 @@ void LedHandler() {
 
 void LaserHandle(){
 	LaserOn = !LaserOn;
-	if (LaserOn && CurLifes>0) {
+	if (LaserOn && CurLifes>0 && !takenDamage) {
 		PORTD |= (1 << LASER);
 	}
 	else {
@@ -268,7 +260,97 @@ void SetupPins(){
 	DDRC |= (1 << RED_PIN); 
 	//LED VERDE
 	DDRD |= (1 << GREEN_PIN);  
+	
+	//motor1 PWM + IN1 + IN2
+	DDRB |= (1 << PB2) | (1 << PB3) | (1 << PB4) ;
+
+	// motor2 PWM motor2 IN1 + IN2
+	DDRB |= (1 << PB5);
+	DDRD |= (1 << PD4) | (1 << PD5);
+	
 }
+
+void frente() {
+	SerialPrintln("indo pra frente");
+	// Motor 1
+	PORTB &= ~(1 << MOTOR1_IN1);   
+	PORTB |=  (1 << MOTOR1_IN2);   
+	PORTB |=  (1 << MOTOR1_PWM);   
+
+	// Motor 2 (invertido)
+	PORTD &= ~(1 << MOTOR2_IN1);
+	PORTD |=  (1 << MOTOR2_IN2); 
+	PORTB |=  (1 << MOTOR2_PWM);
+}
+
+void tras() {
+	SerialPrintln("indo pra tras");
+	//Motor1
+	PORTB |=  (1 << MOTOR1_IN1);  
+	PORTB &= ~(1 << MOTOR1_IN2); 
+	PORTB |=  (1 << MOTOR1_PWM);
+
+	//Motor 2 (invertido)
+	PORTD |=  (1 << MOTOR2_IN1);  
+	PORTD &= ~(1 << MOTOR2_IN2); 
+	PORTB |=  (1 << MOTOR2_PWM);
+}
+
+void direita() {
+	SerialPrintln("indo pra direit");
+	// Motor 1 (esquerdo) ligado pra frente
+	PORTB &= ~(1 << MOTOR1_IN1);
+	PORTB |=  (1 << MOTOR1_IN2);
+	PORTB |=  (1 << MOTOR1_PWM);
+
+	// Motor 2 (direito) desligado
+	PORTD &= ~(1 << MOTOR2_IN1);
+	PORTD &= ~(1 << MOTOR2_IN2);
+	PORTB &= ~(1 << MOTOR2_PWM);
+}
+
+void esquerda() {
+	SerialPrintln("indo pra esquerda");
+	// Motor 1 (esquerdo) desligado
+	PORTB &= ~(1 << MOTOR1_IN1);
+	PORTB &= ~(1 << MOTOR1_IN2);
+	PORTB &= ~(1 << MOTOR1_PWM);
+
+	// Motor 2 (direito) ligado pra frente (invertido)
+	PORTD &= ~(1 << MOTOR2_IN1);
+	PORTD |=  (1 << MOTOR2_IN2);
+	PORTB |=  (1 << MOTOR2_PWM);
+}
+
+void Virar180() {
+	SerialPrintln("virando 180");
+	// MOTOR 1 ? frente
+	PORTB &= ~(1 << MOTOR1_IN1);   // LOW
+	PORTB |=  (1 << MOTOR1_IN2);   // HIGH
+	PORTB |=  (1 << MOTOR1_PWM);   // LIGA
+
+	// MOTOR 2 ? trás (invertido)
+	PORTD |=  (1 << MOTOR2_IN1);   // HIGH
+	PORTD &= ~(1 << MOTOR2_IN2);   // LOW
+	PORTB |=  (1 << MOTOR2_PWM);   // LIGA
+	
+	_delay_ms(1100);
+	PararMotores();
+}
+
+void PararMotores() {
+	SerialPrintln("parando");
+	// Motor 1
+	PORTB &= ~(1 << MOTOR1_IN1);
+	PORTB &= ~(1 << MOTOR1_IN2);
+	PORTB &= ~(1 << MOTOR1_PWM);
+
+	// Motor 2
+	PORTD &= ~(1 << MOTOR2_IN1);
+	PORTD &= ~(1 << MOTOR2_IN2);
+	PORTB &= ~(1 << MOTOR2_PWM);
+}
+
 
 void LifePwmSetup(){
 	TCCR0A = (1 << COM0A1) | (1 << WGM01) | (1 << WGM00);
@@ -278,6 +360,7 @@ void LifePwmSetup(){
 
 void ResetLifes(){
 	CurLifes = MAX_LIFES;
+	LedHandler();
 }
 
 void SetupAdc() {
@@ -300,8 +383,6 @@ void setup() {
 	BT_init();
 	SerialPrintln("bluetooth iniciado");
 	
-	
-	
 	SetupPins();
 	LaserTimerSetup();
 	LifePwmSetup();
@@ -310,34 +391,57 @@ void setup() {
 	sei();
 }
 
+void TakeDamage(){
+	CurLifes--;
+	LedHandler();
+	takenDamage = 1;
+	Virar180();
+	_delay_ms(5000);
+	takenDamage=0;
+}
+
 char buffer[6];
 void loop() {
-	char c = BT_readFiltered();
-
-	int ldrValue = ReadLdr();
-	int i = 0;
-	int temp = ldrValue;
-	do {
-		buffer[i++] = (temp % 10) + '0';
-		temp /= 10;
-	} while (temp > 0);
-
-	buffer[i] = '\0';
-	for(int j=0; j<i/2; j++){
-		char t = buffer[j];
-		buffer[j] = buffer[i-1-j];
-		buffer[i-1-j] = t;
-	}
-	SerialPrintln(buffer);
-	
-	
-	//if (c) {
-		//SerialPrintln("BT recebeu:");
-		//SerialPrintln(c);
+	//transformar int em str
+	//int i = 0;
+	//int temp = ldrValue;
+	//do {
+		//buffer[i++] = (temp % 10) + '0';
+		//temp /= 10;
+	//} while (temp > 0);
 //
-		//if (c == 'a') {
-			//SerialPrintln("igual a meu goat");
-		//}
+	//buffer[i] = '\0';
+	//for(int j=0; j<i/2; j++){
+		//char t = buffer[j];
+		//buffer[j] = buffer[i-1-j];
+		//buffer[i-1-j] = t;
+	//}
+	//SerialPrintln(buffer);
+	char btChar = BT_readFiltered();
+	int ldrValue = ReadLdr();
+	if(ldrValue>LDR_THRESHOLD && !takenDamage && CurLifes>0){
+		TakeDamage();
+		return;
+	}
+	
+	if (btChar && !takenDamage && CurLifes>0) {
+		SerialPrintln("BT recebeu:");
+		SerialPrintln(btChar);
+		switch (btChar) {
+			case 'F': frente(); break;
+			case 'B': tras(); break;
+			case 'R': esquerda(); break;
+			case 'L': direita(); break;
+			case 'S': PararMotores(); break;
+			case 'Y': ResetLifes(); break;
+			case 'H':
+			case 'h':
+			case 'J':
+			case 'j':
+			Virar180();
+			break;
+		}
+		}
 	//}
 }
 
